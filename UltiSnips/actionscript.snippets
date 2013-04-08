@@ -1,0 +1,166 @@
+#
+# Globals
+#
+
+global !p
+
+def getArgs(group):
+	import re
+	word = re.compile('[a-zA-z0-9_]+:\w+')
+	return [i.split(":") for i in word.findall(group) ]
+
+def asdoc(name, params, retVal="void"):
+	asdocVal = "/**\n\t\t * " + name
+	args = getArgs(params)
+	if len(args) > 0:
+		asdocVal += "\n\t\t *"
+		for i in args:
+			asdocVal += "\n\t\t * @param " + i[0] + " "
+	if retVal != "void":
+		asdocVal += "\n\t\t *\n\t\t * @return "
+	asdocVal += "\n\t\t */"
+	return asdocVal
+
+endglobal
+
+#
+# Class Templates
+#
+
+snippet cl "Class Template with field defenitions." !b
+//
+// $3.as
+// Created by ${1:`echo $USER`} on `date "+%B %d, %Y"`
+//
+
+package ${2:package}
+{
+	/**
+	 * $3
+	 * @author $1
+	 */
+	public class ${3:`!p snip.rv = snip.basename or "untitled"`} ${4:extends ${5:Object}} ${6:implements ${7}}
+	{`!p
+args = getArgs(t[8])
+if len(args) == 0:
+	snip.rv = ""
+for i in args:
+	snip.rv += "\n\t\tprivate var " + i[0] + ":"  + i[1] + ";"
+if len(args) > 0:
+	snip.rv += "\n"`
+		`!p snip.rv = asdoc("Constructor", t[8], "void")`
+		public $3($8)
+		{`!p
+args = getArgs(t[8])
+if len(args) == 0: snip.rv = ""
+if len(args) > 0:
+	for i in args:
+		snip.rv += "\n\t\t\tthis." + i[0] + " = " + i[0] + ";"`
+		}$0
+	}
+}
+endsnippet
+
+snippet cldoc "Document Class Template" !b
+//
+// $3.as
+// Created by ${1:`echo $USER`} on `date "+%B %d, %Y"`
+//
+
+package ${2:package}
+{
+	import flash.display.Sprite;
+	import flash.events.Event;
+
+	/**
+	 * $3
+	 * @author $1
+	 */
+	public class ${3:`!p snip.rv = snip.basename`} extends Sprite
+	{
+		/**
+		 * Initialization
+		 */
+		public function init()
+		{
+			$0
+		}
+
+		/**
+		 * Default Constructor
+		 * Initialization is done in |init|
+		 */
+		public $3()
+		{
+			this.addEventListener(Event.ADDED_TO_STAGE, function(e:Event) { init(); });
+		}
+	}
+}
+endsnippet
+
+#
+# Method Templates
+#
+
+snippet f "Function Template" !b
+`!p snip.rv = asdoc(t[2], t[3], t[4])`
+${1:public} function ${2:name}(${3}):${4:void}
+{
+	$0
+}
+
+endsnippet
+
+#
+# Genaral Stuff
+#
+
+snippet pu "public" !b
+public
+endsnippet
+
+snippet po "public" !b
+protected
+endsnippet
+
+snippet pr "public" !b
+private
+endsnippet
+
+snippet im "import" !b
+import
+endsnippet
+
+snippet f.d "flash.display" a
+flash.display.*;$0
+endsnippet
+
+snippet f.e "flash.events" a
+flash.events.*;$0
+endsnippet
+
+snippet if "if statement" b
+if ($1) {
+	$0
+}
+endsnippet
+
+snippet ifel "if else statement" b
+if ($1) {
+	$2
+} else {
+	$0
+}
+endsnippet
+
+snippet el "else statement" a
+else {
+	$0
+}
+endsnippet
+
+snippet elif "else if statement" a
+else if ($1) {
+	$0
+}
+endsnippet

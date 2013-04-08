@@ -4,6 +4,8 @@ call pathogen#helptags()
 " Enable syntax highlighting
 syntax on
 
+filetype plugin indent on
+
 " Set tabstop to 4 spaces
 set ts=4
 
