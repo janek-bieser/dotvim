@@ -1,25 +1,57 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+" change the mapleader from \ to ,
+let mapleader=","
+
 " Enable syntax highlighting
 syntax on
 
 filetype plugin indent on
 
-" Set tabstop to 4 spaces
-set ts=4
+set nowrap			" disable wordwrap
+set tabstop=4		" Set tabstop to 4 spaces
+set backspace=indent,eol,start
+set autoindent
+set copyindent
+set shiftwidth=4	" number of spaces used for each step of (auto)indent
+set shiftround
+set smartindent 	" enable smart indent
+set number			" show line numbers
+set showmatch		" show matching parenthesis
 
-" number of spaces used for each step of (auto)indent
-set sw=4
+set smarttab		" insert tabs on the start of a line according to shiftwidth, not tabstop
 
-" enable smart indent
-set si
+set ignorecase		" ignore case when searching
+set smartcase		" ignore case if search pattern is all lowercase, case-sensetive otherwise
+set hlsearch		" highlight search terms
+set incsearch		" show search matches as you type
 
-" show line numbers
-set nu
+set wildignore=*.swp,*.bak,*.pyc,*.class
 
-" set relateive line numbers
-set rnu
+" make cursor move up/down in rows instead of lines
+" stops cursor from skipping lines when wordwrap is turned on 
+nnoremap j gj
+nnoremap k gk
+nnoremap <down> gj
+nnoremap <up> gk
 
-" linebreak hole words
-set linebreak
+set visualbell		" don't beep
+set noerrorbells	" don't beep
+
+" don't write backup files
+set nobackup
+set noswapfile
+
+" highlight whitespace
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+nnoremap ; :
+nmap <silent> <leader>/ :nohlsearch<CR>
+
+" ------------------------------------------------------------
+
+if has('autocmd')
+	autocmd filetype python set expandtab
+endif
