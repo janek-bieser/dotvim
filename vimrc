@@ -15,11 +15,6 @@ set sw=4
 " enable smart indent
 set si
 
-" syntax highlighting style
-" colorscheme desert
-" colorscheme railcasts
-colorscheme solarized
-
 " show line numbers
 set nu
 
