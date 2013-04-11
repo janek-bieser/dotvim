@@ -61,3 +61,9 @@ endif
 " ----------------------------------------
 
 let g:CommandTMaxHeight=20
+
+" ----------------------------------------
+" LustJuggler Plugin settings
+" ----------------------------------------
+
+nmap <leader>jb :LustyJuggler<CR>
