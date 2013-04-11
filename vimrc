@@ -1,8 +1,44 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-" change the mapleader from \ to ,
-let mapleader=","
+let mapleader="," 	" change the mapleader from \ to ,
+nnoremap ; :
+
+" ----------------------------------------
+" Basic Mappings
+" ----------------------------------------
+
+" clear shearch highlighting
+nmap <silent> <leader>/ :nohlsearch<CR>
+
+" open/reload .vimrc
+map <leader>v :sp ~/.vimrc<CR><C-W>_
+map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"
+
+" toggle spelling
+nmap <leader>s :setlocal spell! spelllang=en_us<CR>
+
+" copy to clipboard
+nmap <leader>y "*y
+nmap <leader>Y "*yy
+nmap <leader>p "*p
+
+" make cursor move up/down in rows instead of lines
+" stops cursor from skipping lines when wordwrap is turned on 
+nnoremap j gj
+nnoremap k gk
+nnoremap <down> gj
+nnoremap <up> gk
+
+" ----------------------------------------
+" Window Settings
+" ----------------------------------------
+
+set cmdheight=2 " set command line height to 2 lines
+
+" ----------------------------------------
+" Text Editing
+" ----------------------------------------
 
 " Enable syntax highlighting
 syntax on
@@ -29,13 +65,6 @@ set incsearch		" show search matches as you type
 
 set wildignore=*.swp,*.bak,*.pyc,*.class
 
-" make cursor move up/down in rows instead of lines
-" stops cursor from skipping lines when wordwrap is turned on 
-nnoremap j gj
-nnoremap k gk
-nnoremap <down> gj
-nnoremap <up> gk
-
 set visualbell		" don't beep
 set noerrorbells	" don't beep
 
@@ -46,9 +75,6 @@ set noswapfile
 " highlight whitespace
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
-
-nnoremap ; :
-nmap <silent> <leader>/ :nohlsearch<CR>
 
 " ------------------------------------------------------------
 
