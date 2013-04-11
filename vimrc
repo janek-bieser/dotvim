@@ -55,3 +55,9 @@ nmap <silent> <leader>/ :nohlsearch<CR>
 if has('autocmd')
 	autocmd filetype python set expandtab
 endif
+
+" ----------------------------------------
+" Command-T Plugin settings
+" ----------------------------------------
+
+let g:CommandTMaxHeight=20
