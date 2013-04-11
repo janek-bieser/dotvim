@@ -13,7 +13,7 @@ nmap <silent> <leader>/ :nohlsearch<CR>
 
 " open/reload .vimrc
 map <leader>v :sp ~/.vimrc<CR><C-W>_
-map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"
+map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " toggle spelling
 nmap <leader>s :setlocal spell! spelllang=en_us<CR>
