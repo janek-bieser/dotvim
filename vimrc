@@ -83,10 +83,27 @@ if has('autocmd')
 endif
 
 " ----------------------------------------
+" UltiSnips Plugin settings
+" ----------------------------------------
+
+let g:UltiSnipsEditSplit = "vertical"
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+
+" ----------------------------------------
 " Command-T Plugin settings
 " ----------------------------------------
 
 let g:CommandTMaxHeight=20
+
+" ----------------------------------------
+" Clang Complete Plugin settings
+" ----------------------------------------
+
+let g:clang_snippets = 1
+let g:clang_snippets_engine = 'ultisnips'
 
 " ----------------------------------------
 " LustJuggler Plugin settings

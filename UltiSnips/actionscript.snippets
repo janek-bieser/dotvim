@@ -21,7 +21,21 @@ def asdoc(name, params, retVal="void"):
 	asdocVal += "\n\t\t */"
 	return asdocVal
 
+def asdoc2(name, params, retVal="void"):
+	# asdocVal = "/**\n\t\t * " + name
+	asdocVal = "/**" + snip.mkline()
+	args = getArgs(params)
+	if len(args) > 0:
+		asdocVal += "\n\t\t *"
+		for i in args:
+			asdocVal += "\n\t\t * @param " + i[0] + " "
+	if retVal != "void":
+		asdocVal += "\n\t\t *\n\t\t * @return "
+	asdocVal += "\n\t\t */"
+	return asdocVal
+
 endglobal
+
 
 #
 # Class Templates
@@ -98,17 +112,25 @@ package ${2:package}
 }
 endsnippet
 
+
 #
 # Method Templates
 #
 
-snippet f "Function Template" !b
+snippet f "Function Template" b
 `!p snip.rv = asdoc(t[2], t[3], t[4])`
 ${1:public} function ${2:name}(${3}):${4:void}
 {
-	$0
+	${0:// TODO: Implementation}
 }
+endsnippet
 
+snippet eh "Event Handler Function Template" b
+`!p snip.rv = asdoc(t[1], "e:" + t[2])`
+private function ${1:name}(e:${2:Event}):void
+{
+	${0:// TODO: Implementation}
+}
 endsnippet
 
 #
