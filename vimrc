@@ -12,7 +12,7 @@ nnoremap ; :
 nmap <silent> <leader>/ :nohlsearch<CR>
 
 " open/reload .vimrc
-map <leader>v :sp ~/.vimrc<CR><C-W>_
+map <leader>v :vsp ~/.vimrc<CR><C-W>_
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " toggle spelling
@@ -29,6 +29,9 @@ nnoremap j gj
 nnoremap k gk
 nnoremap <down> gj
 nnoremap <up> gk
+
+" trigger clang_complete completion
+imap <c-space> <c-x><c-u>
 
 " ----------------------------------------
 " Window Settings
@@ -73,8 +76,8 @@ set nobackup
 set noswapfile
 
 " highlight whitespace
-set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+" set list
+" set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 " ------------------------------------------------------------
 
