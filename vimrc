@@ -1,7 +1,7 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-let mapleader="," 	" change the mapleader from \ to ,
+let mapleader="," " change the mapleader from \ to ,
 nnoremap ; :
 
 " ----------------------------------------
@@ -48,42 +48,43 @@ syntax on
 
 filetype plugin indent on
 
-set nowrap			" disable wordwrap
-set tabstop=4		" Set tabstop to 4 spaces
+set nowrap          " disable wordwrap
+set tabstop=4       " Set tabstop to 4 spaces
 set backspace=indent,eol,start
 set autoindent
 set copyindent
-set shiftwidth=4	" number of spaces used for each step of (auto)indent
+set shiftwidth=4    " number of spaces used for each step of (auto)indent
 set shiftround
-set smartindent 	" enable smart indent
-set number			" show line numbers
-set showmatch		" show matching parenthesis
+set smartindent     " enable smart indent
+set number          " show line numbers
+set showmatch       " show matching parenthesis
 
-set smarttab		" insert tabs on the start of a line according to shiftwidth, not tabstop
+set smarttab        " insert tabs on the start of a line according to shiftwidth, not tabstop
 
-set ignorecase		" ignore case when searching
-set smartcase		" ignore case if search pattern is all lowercase, case-sensetive otherwise
-set hlsearch		" highlight search terms
-set incsearch		" show search matches as you type
+set ignorecase      " ignore case when searching
+set smartcase       " ignore case if search pattern is all lowercase, case-sensetive otherwise
+set hlsearch        " highlight search terms
+set incsearch       " show search matches as you type
 
 set wildignore=*.swp,*.bak,*.pyc,*.class
 
-set visualbell		" don't beep
-set noerrorbells	" don't beep
+set visualbell      " don't beep
+set noerrorbells    " don't beep
 
 " don't write backup files
 set nobackup
 set noswapfile
 
 " highlight whitespace
-" set list
-" set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 " ------------------------------------------------------------
 
 if has('autocmd')
-	autocmd filetype python set expandtab
+    autocmd filetype python set expandtab
 endif
+
 
 " ----------------------------------------
 " UltiSnips Plugin settings
@@ -113,3 +114,4 @@ let g:clang_snippets_engine = 'ultisnips'
 " ----------------------------------------
 
 nmap <leader>jb :LustyJuggler<CR>
+
