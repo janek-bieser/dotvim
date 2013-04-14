@@ -25,7 +25,7 @@ nmap <leader>Y "*yy
 nmap <leader>p "*p
 
 " make cursor move up/down in rows instead of lines
-" stops cursor from skipping lines when wordwrap is turned on 
+" stops cursor from skipping lines when wordwrap is turned on
 nnoremap j gj
 nnoremap k gk
 nnoremap <down> gj
@@ -34,20 +34,13 @@ nnoremap <up> gk
 " trigger clang_complete completion
 imap <c-space> <c-x><c-u>
 
-" ----------------------------------------
-" Window Settings
-" ----------------------------------------
-
-" command line
-set cmdheight=1
-set wildmenu
-
-" show line numbers
-set number
 
 " ----------------------------------------
 " Text Editing
 " ----------------------------------------
+
+" Enable Mouse
+set mouse=a
 
 " Enable syntax highlighting
 syntax on
@@ -100,10 +93,32 @@ if has('autocmd')
 	autocmd filetype python setlocal expandtab
 
 	" use word wrap
-	autocmd filetype text,markdown,html,xml setlocal wrap nolist linebreak formatoptions=l
+	autocmd filetype text,markdown setlocal wrap nolist linebreak formatoptions=l
 
 	" disable line numbers when editing plaintext
 	autocmd filetype text setlocal nonumber
+endif
+
+
+" ----------------------------------------
+" GUI Settings
+" ----------------------------------------
+
+" command line
+set cmdheight=1
+set wildmenu
+
+" show line numbers
+set number
+
+" enable status line
+set laststatus=2
+
+" set font-family and size
+set guifont=Anonymous\ Pro:h14
+
+if has('gui_running')
+	colorscheme Tomorrow-Night
 endif
 
 
