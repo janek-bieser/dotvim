@@ -136,3 +136,8 @@ let g:clang_snippets_engine = 'ultisnips'
 
 nmap <leader>jb :LustyJuggler<CR>
 
+
+" ----------------------------------------
+" eclim Plugin settings
+" ----------------------------------------
+let g:acp_behaviorJavaEclimLength=3
