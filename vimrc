@@ -38,8 +38,9 @@ imap <c-space> <c-x><c-u>
 " Window Settings
 " ----------------------------------------
 
-" set command line height to 2 lines
+" command line
 set cmdheight=1
+set wildmenu
 
 " show line numbers
 set number
@@ -60,7 +61,7 @@ set sidescrolloff=1
 
 " highlight whitespace
 set list
-set listchars=tab:>.,trail:.,extends:>,precedes:<,nbsp:.
+set listchars=tab:>-,trail:.,extends:>,precedes:<,nbsp:.
 
 " tabstop configuration
 set tabstop=4
