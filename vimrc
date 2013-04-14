@@ -72,13 +72,13 @@ set smartindent
 set shiftround " round indent to multiple of 'shiftwidth'
 
 set backspace=indent,eol,start
-set showmatch       " show matching parenthesis
+set showmatch " show matching parenthesis
 
 " searching behavior
-set ignorecase      " ignore case when searching
-set smartcase       " ignore case if search pattern is all lowercase, case-sensetive otherwise
-set hlsearch        " highlight search terms
-set incsearch       " show search matches as you type
+set ignorecase		" ignore case when searching
+set smartcase		" ignore case if search pattern is all lowercase, case-sensetive otherwise
+set hlsearch		" highlight search terms
+set incsearch		" show search matches as you type
 
 " buffer settings
 set wildignore=*.swp,*.bak,*.pyc,*.class
