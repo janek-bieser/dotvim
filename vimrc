@@ -54,7 +54,12 @@ set sidescrolloff=1
 
 " highlight whitespace
 set list
-set listchars=tab:>-,trail:.,extends:>,precedes:<,nbsp:.
+
+if has('gui_running')
+	set listchars=tab:>-,trail:.,extends:>,precedes:<,nbsp:.
+else
+	set listchars=tab:\ \ ,trail:.,extends:>,precedes:<,nbsp:.
+endif
 
 " tabstop configuration
 set tabstop=4
@@ -118,7 +123,8 @@ set laststatus=2
 set guifont=Anonymous\ Pro:h14
 
 if has('gui_running')
-	colorscheme Tomorrow-Night
+	set bg=dark
+	colorscheme base16-eighties
 endif
 
 
