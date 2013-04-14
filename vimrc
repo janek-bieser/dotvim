@@ -1,3 +1,4 @@
+" setup pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
@@ -37,7 +38,11 @@ imap <c-space> <c-x><c-u>
 " Window Settings
 " ----------------------------------------
 
-set cmdheight=2 " set command line height to 2 lines
+" set command line height to 2 lines
+set cmdheight=1
+
+" show line numbers
+set number
 
 " ----------------------------------------
 " Text Editing
@@ -48,41 +53,56 @@ syntax on
 
 filetype plugin indent on
 
-set nowrap          " disable wordwrap
-set tabstop=4       " Set tabstop to 4 spaces
-set backspace=indent,eol,start
+" wordwrap behavior
+set nowrap
+set sidescroll=1
+set sidescrolloff=1
+
+" highlight whitespace
+set list
+set listchars=tab:>.,trail:.,extends:>,precedes:<,nbsp:.
+
+" tabstop configuration
+set tabstop=4
+set smarttab
+set shiftwidth=4
 set autoindent
-set copyindent
-set shiftwidth=4    " number of spaces used for each step of (auto)indent
-set shiftround
-set smartindent     " enable smart indent
-set number          " show line numbers
+set smartindent
+set shiftround " round indent to multiple of 'shiftwidth'
+
+set backspace=indent,eol,start
 set showmatch       " show matching parenthesis
 
-set smarttab        " insert tabs on the start of a line according to shiftwidth, not tabstop
-
+" searching behavior
 set ignorecase      " ignore case when searching
 set smartcase       " ignore case if search pattern is all lowercase, case-sensetive otherwise
 set hlsearch        " highlight search terms
 set incsearch       " show search matches as you type
 
+" buffer settings
 set wildignore=*.swp,*.bak,*.pyc,*.class
+set hidden " allows closing buffer without saving
 
-set visualbell      " don't beep
-set noerrorbells    " don't beep
+" don't beep
+set visualbell
+set noerrorbells
 
 " don't write backup files
 set nobackup
 set noswapfile
 
-" highlight whitespace
-set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
-" ------------------------------------------------------------
+" FileType specific settings ---------------------------------
 
 if has('autocmd')
-    autocmd filetype python set expandtab
+	" use spaces instead of tabs in python files
+	autocmd filetype python setlocal expandtab
+
+	" use word wrap
+	autocmd filetype text,markdown,html,xml setlocal wrap nolist linebreak formatoptions=l
+
+	" disable line numbers when editing plaintext
+	autocmd filetype text setlocal nonumber
 endif
 
 
@@ -100,7 +120,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " Command-T Plugin settings
 " ----------------------------------------
 
-let g:CommandTMaxHeight=20
+let g:CommandTMaxHeight=30
 
 " ----------------------------------------
 " Clang Complete Plugin settings
