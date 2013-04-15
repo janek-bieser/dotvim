@@ -31,7 +31,9 @@ nnoremap k gk
 nnoremap <down> gj
 nnoremap <up> gk
 
-" trigger clang_complete completion
+nmap <leader>w <c-w>
+
+" trigger user completion
 imap <c-space> <c-x><c-u>
 
 
@@ -124,7 +126,7 @@ set guifont=Anonymous\ Pro:h14
 
 if has('gui_running')
 	set bg=dark
-	colorscheme base16-eighties
+	colorscheme jb-base16-eighties
 endif
 
 
