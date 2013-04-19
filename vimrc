@@ -81,7 +81,7 @@ set hlsearch		" highlight search terms
 set incsearch		" show search matches as you type
 
 " buffer settings
-set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildignore=*.swp,*.bak,*.pyc
 set hidden " allows closing buffer without saving
 
 " don't beep
@@ -97,13 +97,11 @@ set noswapfile
 
 if has('autocmd')
 	" use spaces instead of tabs in python files
-	autocmd filetype python setlocal expandtab
+	au filetype python setlocal expandtab
 
 	" use word wrap
-	autocmd filetype text,markdown setlocal wrap nolist linebreak formatoptions=l
-
-	" disable line numbers when editing plaintext
-	autocmd filetype text setlocal nonumber
+	au filetype text setlocal wrap nolist lbr nonumber
+	au filetype markdown,html,xhtml,xml setlocal wrap nolist lbr
 endif
 
 
@@ -127,6 +125,10 @@ set guifont=Anonymous\ Pro:h14
 if has('gui_running')
 	set bg=dark
 	colorscheme jb-base16-eighties
+
+	" set initial window size
+	set lines=60
+	set columns=160
 endif
 
 
