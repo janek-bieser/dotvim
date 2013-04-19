@@ -12,7 +12,7 @@ let mapleader=","
 nnoremap ; :
 inoremap jj <Esc>
 
-" clear shearch highlighting
+" clear search highlighting
 nmap <silent> <leader>/ :nohlsearch<CR>
 
 " open/reload .vimrc
@@ -79,7 +79,7 @@ set showmatch " show matching parenthesis
 
 " searching behavior
 set ignorecase		" ignore case when searching
-set smartcase		" ignore case if search pattern is all lowercase, case-sensetive otherwise
+set smartcase		" ignore case if search pattern is all lowercase, case-sensitive otherwise
 set hlsearch		" highlight search terms
 set incsearch		" show search matches as you type
 
@@ -136,7 +136,7 @@ endif
 
 
 " ----------------------------------------
-" UltiSnips Plugin settings
+" UltiSnips Plug-in settings
 " ----------------------------------------
 
 let g:UltiSnipsEditSplit = "vertical"
@@ -146,26 +146,27 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 
 " ----------------------------------------
-" Command-T Plugin settings
+" Command-T Plug-in settings
 " ----------------------------------------
 
 let g:CommandTMaxHeight=30
 
 " ----------------------------------------
-" Clang Complete Plugin settings
+" Clang Complete Plug-in settings
 " ----------------------------------------
 
 let g:clang_snippets = 1
 let g:clang_snippets_engine = 'ultisnips'
 
 " ----------------------------------------
-" LustJuggler Plugin settings
+" LustJuggler Plug-in settings
 " ----------------------------------------
 
 nmap <leader>jb :LustyJuggler<CR>
 
 
 " ----------------------------------------
-" eclim Plugin settings
+" eclim Plug-in settings
 " ----------------------------------------
 let g:acp_behaviorJavaEclimLength=3
+let g:EclimJavaCompleteCaseSensitive=0
