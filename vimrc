@@ -2,12 +2,15 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-let mapleader="," " change the mapleader from \ to ,
-nnoremap ; :
+" change the mapleader from \ to ,
+let mapleader=","
 
 " ----------------------------------------
 " Basic Mappings
 " ----------------------------------------
+
+nnoremap ; :
+inoremap jj <Esc>
 
 " clear shearch highlighting
 nmap <silent> <leader>/ :nohlsearch<CR>
