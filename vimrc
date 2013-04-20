@@ -155,8 +155,14 @@ let g:CommandTMaxHeight=30
 " Clang Complete Plug-in settings
 " ----------------------------------------
 
+let g:clang_auto_select = 1
 let g:clang_snippets = 1
+let g:clang_close_preview = 1
+let g:clang_complete_copen = 1
 let g:clang_snippets_engine = 'ultisnips'
+
+nmap <leader>f :exe g:ClangUpdateQuickFix()<CR>
+
 
 " ----------------------------------------
 " LustJuggler Plug-in settings

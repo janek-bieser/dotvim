@@ -9,30 +9,20 @@ def getArgs(group):
 	word = re.compile('[a-zA-z0-9_]+:\w+')
 	return [i.split(":") for i in word.findall(group) ]
 
-def asdoc(name, params, retVal="void"):
-	asdocVal = "/**\n\t\t * " + name
-	args = getArgs(params)
+#
+# s: The snip Object
+# args: The parameter list 
+#
+def appendASDocParams(s, args):
 	if len(args) > 0:
-		asdocVal += "\n\t\t *"
+		s += " *"
 		for i in args:
-			asdocVal += "\n\t\t * @param " + i[0] + " "
-	if retVal != "void":
-		asdocVal += "\n\t\t *\n\t\t * @return "
-	asdocVal += "\n\t\t */"
-	return asdocVal
+			s += " * @param " + i[0] + " "
 
-def asdoc2(name, params, retVal="void"):
-	# asdocVal = "/**\n\t\t * " + name
-	asdocVal = "/**" + snip.mkline()
-	args = getArgs(params)
-	if len(args) > 0:
-		asdocVal += "\n\t\t *"
-		for i in args:
-			asdocVal += "\n\t\t * @param " + i[0] + " "
-	if retVal != "void":
-		asdocVal += "\n\t\t *\n\t\t * @return "
-	asdocVal += "\n\t\t */"
-	return asdocVal
+def appendASDocReturn(s, retVal="void"):
+	if retVal != "void" and retVal != "" and retVal != None:
+		s += " *"
+		s += " * @return "
 
 endglobal
 
@@ -118,20 +108,26 @@ endsnippet
 #
 
 snippet f "Function Template" b
-`!p snip.rv = asdoc(t[2], t[3], t[4])`
+/**`!p
+snip.rv = ""
+
+if t[1] == "private":
+	snip += " * @private"
+	snip += " *"
+`
+ * ${5:Description...}`!p
+
+snip.rv = ""
+appendASDocParams(snip, getArgs(t[3]))
+appendASDocReturn(snip, t[4])
+`
+ */
 ${1:public} function ${2:name}(${3}):${4:void}
 {
 	${0:// TODO: Implementation}
 }
 endsnippet
 
-snippet eh "Event Handler Function Template" b
-`!p snip.rv = asdoc(t[1], "e:" + t[2])`
-private function ${1:name}(e:${2:Event}):void
-{
-	${0:// TODO: Implementation}
-}
-endsnippet
 
 #
 # Genaral Stuff
