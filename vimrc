@@ -37,7 +37,7 @@ nnoremap <up> gk
 nmap <leader>w <c-w>
 
 " trigger user completion
-imap <c-space> <c-x><c-u>
+imap <c-space> <c-x><c-u><c-p>
 
 
 " ----------------------------------------
