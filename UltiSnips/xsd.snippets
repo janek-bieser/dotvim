@@ -1,0 +1,31 @@
+snippet e "Element" !b
+<xs:element name="${1:name}"${2: type="${3:aType}"}>
+	$0
+</xs:element>
+endsnippet
+
+snippet se "Simple Element" !b
+<xs:element name="${1:name}" type="${2:xs:string}"/>$0
+endsnippet
+
+snippet ct "Complex Type" !b
+<xs:complexType>
+	$0
+</xs:complexType>
+endsnippet
+
+snippet st "Simple Type" !b
+<xs:simpleType>
+	$0
+<xs:simpleType>
+endsnippet
+
+snippet n "Node" !b
+<xs:${1:element}${2: name="${3}"}>
+	$0
+</xs:$1>
+endsnippet
+
+snippet sn "Simple Node" !b
+<xs:${1:element}${2: name="${3}"}/>$0
+endsnippet

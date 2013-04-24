@@ -12,12 +12,12 @@ let mapleader=","
 nnoremap ; :
 inoremap jj <Esc>
 
-" clear search highlighting
-nmap <silent> <leader>/ :nohlsearch<CR>
+" clear last search term
+nmap <silent> <leader>/ :let @/=""<CR>
 
 " open/reload .vimrc
-map <leader>v :vsp ~/.vimrc<CR><C-W>_
-map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+map <leader>v :vsp ~/.vimrc<CR><C-W><CR>
+map <silent> <leader>V :silent! :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " toggle spelling
 nmap <leader>s :setlocal spell! spelllang=en_us<CR>
@@ -43,6 +43,9 @@ imap <c-space> <c-x><c-u><c-p>
 " ----------------------------------------
 " Text Editing
 " ----------------------------------------
+
+" highlight line the cursor is currently on
+set cursorline
 
 " Enable Mouse
 set mouse=a
@@ -80,8 +83,8 @@ set showmatch " show matching parenthesis
 " searching behavior
 set ignorecase		" ignore case when searching
 set smartcase		" ignore case if search pattern is all lowercase, case-sensitive otherwise
-set hlsearch		" highlight search terms
-set incsearch		" show search matches as you type
+set incsearch		" show search matches as you Type
+set hlsearch
 
 " buffer settings
 set wildignore=*.swp,*.bak,*.pyc
@@ -104,7 +107,8 @@ if has('autocmd')
 
 	" use word wrap
 	au filetype text setlocal wrap nolist lbr nonumber
-	au filetype markdown,html,xhtml,xml setlocal wrap nolist lbr
+	au filetype markdown setlocal wrap nolist lbr
+	au filetype html,xhtml,xml,xsd setlocal wrap nolist lbr ts=2 sw=2
 endif
 
 
