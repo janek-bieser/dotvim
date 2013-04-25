@@ -44,9 +44,6 @@ imap <c-space> <c-x><c-u><c-p>
 " Text Editing
 " ----------------------------------------
 
-" highlight line the cursor is currently on
-set cursorline
-
 " Enable Mouse
 set mouse=a
 
@@ -64,14 +61,15 @@ set sidescrolloff=1
 set list
 
 if has('gui_running')
-	set listchars=tab:>-,trail:.,extends:>,precedes:<,nbsp:.
+    set listchars=tab:>-,trail:.,extends:>,precedes:<,nbsp:.
 else
-	set listchars=tab:\ \ ,trail:.,extends:>,precedes:<,nbsp:.
+    set listchars=tab:\ \ ,trail:.,extends:>,precedes:<,nbsp:.
 endif
 
 " tabstop configuration
 set tabstop=4
 set smarttab
+set expandtab
 set shiftwidth=4
 set autoindent
 set smartindent
@@ -102,13 +100,10 @@ set noswapfile
 " FileType specific settings ---------------------------------
 
 if has('autocmd')
-	" use spaces instead of tabs in python files
-	au filetype python setlocal expandtab
-
-	" use word wrap
-	au filetype text setlocal wrap nolist lbr nonumber
-	au filetype markdown setlocal wrap nolist lbr
-	au filetype html,xhtml,xml,xsd setlocal wrap nolist lbr ts=2 sw=2
+    " use word wrap
+    au filetype text setlocal wrap nolist lbr nonumber
+    au filetype markdown setlocal wrap nolist lbr
+    au filetype html,xhtml,xml,xsd setlocal wrap nolist lbr ts=2 sw=2
 endif
 
 
@@ -130,12 +125,15 @@ set laststatus=2
 set guifont=Anonymous\ Pro:h14
 
 if has('gui_running')
-	set bg=dark
-	colorscheme jb-base16-eighties
+    set bg=dark
+    colorscheme jb-base16-eighties
 
-	" set initial window size
-	set lines=60
-	set columns=160
+    " set initial window size
+    set lines=60
+    set columns=160
+
+    " highlight line the cursor is currently on
+    set cursorline
 endif
 
 
