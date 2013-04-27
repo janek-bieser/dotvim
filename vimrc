@@ -39,6 +39,10 @@ nmap <leader>w <c-w>
 " trigger user completion
 imap <c-space> <c-x><c-u><c-p>
 
+if has("gui_macvim")
+    map <SwipeLeft> :bprev<CR>
+    map <SwipeRight> :bnext<CR>
+endif
 
 " ----------------------------------------
 " Text Editing
