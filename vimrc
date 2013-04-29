@@ -1,3 +1,11 @@
+"==---------------------------------------------=="
+"==--------------     .vimrc      --------------=="
+"==-------------- by Janek Bieser --------------=="
+"==---------------------------------------------=="
+
+
+set nocompatible
+
 " setup pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
@@ -5,12 +13,16 @@ call pathogen#helptags()
 " change the mapleader from \ to ,
 let mapleader=","
 
+
 " ----------------------------------------
 " Basic Mappings
 " ----------------------------------------
 
 nnoremap ; :
 inoremap jj <Esc>
+
+" split line at cursor location
+nnoremap K <Esc>i<CR><Esc>
 
 " clear last search term
 nmap <silent> <leader>/ :let @/=""<CR>
@@ -20,7 +32,7 @@ map <leader>v :vsp ~/.vimrc<CR><C-W><CR>
 map <silent> <leader>V :silent! :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " toggle spelling
-nmap <leader>s :setlocal spell! spelllang=en_us<CR>
+nmap <leader>s :setlocal spell!<CR>
 
 " copy to clipboard
 nmap <leader>y "*y
@@ -39,10 +51,6 @@ nmap <leader>w <c-w>
 " trigger user completion
 imap <c-space> <c-x><c-u><c-p>
 
-if has("gui_macvim")
-    map <SwipeLeft> :bprev<CR>
-    map <SwipeRight> :bnext<CR>
-endif
 
 " ----------------------------------------
 " Text Editing
@@ -83,13 +91,13 @@ set backspace=indent,eol,start
 set showmatch " show matching parenthesis
 
 " searching behavior
-set ignorecase		" ignore case when searching
-set smartcase		" ignore case if search pattern is all lowercase, case-sensitive otherwise
-set incsearch		" show search matches as you Type
-set hlsearch
+set ignorecase " ignore case when searching
+set smartcase  " ignore case if search pattern is all lowercase, case-sensitive otherwise
+set incsearch  " show search matches as you Type
+set hlsearch   " highlight search result
 
 " buffer settings
-set wildignore=*.swp,*.bak,*.pyc
+set wildignore=*.swp
 set hidden " allows closing buffer without saving
 
 " don't beep
@@ -104,10 +112,14 @@ set noswapfile
 " FileType specific settings ---------------------------------
 
 if has('autocmd')
-    " use word wrap
-    au filetype text setlocal wrap nolist lbr nonumber
-    au filetype markdown setlocal wrap nolist lbr
-    au filetype html,xhtml,xml,xsd setlocal wrap nolist lbr ts=2 sw=2
+    augroup formattingEx
+        au!
+
+        " use word wrap
+        au filetype text setlocal wrap nolist lbr nonumber
+        au filetype markdown setlocal wrap nolist lbr
+        au filetype html,xhtml,xml,xsd setlocal wrap nolist lbr ts=2 sw=2
+    augroup END
 endif
 
 
@@ -125,16 +137,25 @@ set number
 " enable status line
 set laststatus=2
 
+" statusline format
+set statusline=%t          " tail of the filename
+set statusline+=\ [%{strlen(&fenc)?&fenc:'none'}, " file encoding
+set statusline+=%{&ff}]    " file format
+set statusline+=%m         " modified flag
+set statusline+=%r         " read only flag
+set statusline+=%y         " filetype
+set statusline+=%=         " left/right separator
+set statusline+=[%b][0x%B] " ASCII and hex value of char under cursor
+set statusline+=[%c,       " cursor column
+set statusline+=%l/%L]     " cursor line/total lines
+set statusline+=\ \ %P     " percent through file
+
 " set font-family and size
 set guifont=Anonymous\ Pro:h14
+colorscheme jb-base16-eighties
+set bg=dark
 
 if has('gui_running')
-    set bg=dark
-    colorscheme jb-base16-eighties
-
-    " set initial window size
-    set lines=60
-    set columns=160
 
     " highlight line the cursor is currently on
     set cursorline
@@ -180,5 +201,6 @@ nmap <leader>jb :LustyJuggler<CR>
 " ----------------------------------------
 " eclim Plug-in settings
 " ----------------------------------------
+
 let g:acp_behaviorJavaEclimLength=3
 let g:EclimJavaCompleteCaseSensitive=0
