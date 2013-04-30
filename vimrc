@@ -156,7 +156,6 @@ colorscheme jb-base16-eighties
 set bg=dark
 
 if has('gui_running')
-
     " highlight line the cursor is currently on
     set cursorline
 endif
