@@ -6,7 +6,7 @@ git clone git://github.com/janek-bieser/dotvim.git ~/.vim
 
 ## Create symlinks:
 
-On OS X, vim is looking for the `.vimrc` file in your users directory.
+On OS X, vim is looking for the `.vimrc` file in your home directory.
 
 ```bash
 ln -s ~/.vim/vimrc ~/.vimrc
