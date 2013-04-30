@@ -137,21 +137,8 @@ set number
 " enable status line
 set laststatus=2
 
-" statusline format
-set statusline=%t          " tail of the filename
-set statusline+=\ [%{strlen(&fenc)?&fenc:'none'}, " file encoding
-set statusline+=%{&ff}]    " file format
-set statusline+=%m         " modified flag
-set statusline+=%r         " read only flag
-set statusline+=%y         " filetype
-set statusline+=%=         " left/right separator
-set statusline+=[%b][0x%B] " ASCII and hex value of char under cursor
-set statusline+=[%c,       " cursor column
-set statusline+=%l/%L]     " cursor line/total lines
-set statusline+=\ \ %P     " percent through file
-
 " set font-family and size
-set guifont=Anonymous\ Pro:h14
+set guifont=Anonymous\ Pro\ for\ Powerline:h14
 colorscheme jb-base16-eighties
 set bg=dark
 
@@ -203,3 +190,10 @@ nmap <leader>jb :LustyJuggler<CR>
 
 let g:acp_behaviorJavaEclimLength=3
 let g:EclimJavaCompleteCaseSensitive=0
+
+
+" ----------------------------------------
+" Powerline Plug-in settings
+" ----------------------------------------
+
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
