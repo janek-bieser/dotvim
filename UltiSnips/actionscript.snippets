@@ -53,7 +53,7 @@ for i in args:
 if len(args) > 0:
 	snip.rv += "\n"`
 		`!p snip.rv = asdoc("Constructor", t[8], "void")`
-		public $3(${8})
+		public function $3(${8})
 		{`!p
 args = getArgs(t[8])
 if len(args) == 0: snip.rv = ""
@@ -94,7 +94,7 @@ package ${2:package}
 		 * Default Constructor
 		 * Initialization is done in |init|
 		 */
-		public $3()
+		public function $3()
 		{
 			this.addEventListener(Event.ADDED_TO_STAGE, function(e:Event) { init(); });
 		}
