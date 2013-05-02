@@ -109,7 +109,7 @@ set nobackup
 set noswapfile
 
 
-" FileType specific settings ---------------------------------
+" Autocommands ---------------------------------
 
 if has('autocmd')
     augroup formattingEx
@@ -120,6 +120,9 @@ if has('autocmd')
         au filetype markdown setlocal wrap nolist lbr
         au filetype html,xhtml,xml,xsd setlocal wrap nolist lbr ts=2 sw=2
     augroup END
+
+    " autosave
+    au BufLeave,FocusLost * silent! wall
 endif
 
 
@@ -145,6 +148,12 @@ set bg=dark
 if has('gui_running')
     " highlight line the cursor is currently on
     set cursorline
+
+    " remove scrollbar
+    set guioptions-=r
+    set guioptions-=R
+    set guioptions-=l
+    set guioptions-=L
 endif
 
 
