@@ -28,7 +28,7 @@ nnoremap K <Esc>i<CR><Esc>
 nmap <silent> <leader>/ :let @/=""<CR>
 
 " open/reload .vimrc
-map <leader>v :vsp ~/.vimrc<CR><C-W><CR>
+map <leader>v :vsp ~/.vim/vimrc<CR><C-W><CR>
 map <silent> <leader>V :silent! :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " toggle spelling
@@ -140,20 +140,33 @@ set number
 " enable status line
 set laststatus=2
 
-" set font-family and size
-set guifont=Anonymous\ Pro\ for\ Powerline:h14
-colorscheme jb-base16-eighties
-set bg=dark
+" highlight line the cursor is currently on
+set cursorline
 
 if has('gui_running')
-    " highlight line the cursor is currently on
-    set cursorline
+    " set font-family and size
+    set guifont=Anonymous\ Pro\ for\ Powerline:h14
+
+    " colorscheme
+    colorscheme solarized
 
     " remove scrollbar
     set guioptions-=r
     set guioptions-=R
     set guioptions-=l
     set guioptions-=L
+endif
+
+if !has('gui_running')
+    set background=dark
+    " solarized options 
+    let g:solarized_termcolors = 16
+    colorscheme solarized
+
+    " Fix comment issue until I know
+    " how to really fix it
+    exe ":hi Comment cterm=none"
+    exe ":hi vimLineComment cterm=none"
 endif
 
 
@@ -205,4 +218,4 @@ let g:EclimJavaCompleteCaseSensitive=0
 " Powerline Plug-in settings
 " ----------------------------------------
 
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+set rtp+=/usr/local/powerline/powerline/bindings/vim
