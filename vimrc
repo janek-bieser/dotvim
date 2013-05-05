@@ -35,7 +35,7 @@ map <silent> <leader>V :silent! :source ~/.vimrc<CR>:filetype detect<CR>:exe ":e
 nmap <leader>s :setlocal spell!<CR>
 
 " copy to clipboard
-nmap <leader>y "*y
+vmap <leader>y "*y
 nmap <leader>Y "*yy
 nmap <leader>p "*p
 
