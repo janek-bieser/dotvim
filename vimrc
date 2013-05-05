@@ -143,6 +143,8 @@ set laststatus=2
 " highlight line the cursor is currently on
 set cursorline
 
+set background=dark
+
 if has('gui_running')
     " set font-family and size
     set guifont=Anonymous\ Pro\ for\ Powerline:h14
@@ -158,7 +160,6 @@ if has('gui_running')
 endif
 
 if !has('gui_running')
-    set background=dark
     " solarized options 
     let g:solarized_termcolors = 16
     colorscheme solarized
