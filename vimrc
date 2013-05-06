@@ -119,6 +119,8 @@ if has('autocmd')
         au filetype text setlocal wrap nolist lbr nonumber
         au filetype markdown setlocal wrap nolist lbr
         au filetype html,xhtml,xml,xsd setlocal wrap nolist lbr ts=2 sw=2
+
+        au filetype ruby setlocal ts=2 sw=2
     augroup END
 
     " autosave
@@ -150,7 +152,7 @@ if has('gui_running')
     set guifont=Anonymous\ Pro\ for\ Powerline:h14
 
     " colorscheme
-    colorscheme solarized
+    colorscheme jb-solarized
 
     " remove scrollbar
     set guioptions-=r
@@ -162,7 +164,7 @@ endif
 if !has('gui_running')
     " solarized options 
     let g:solarized_termcolors = 16
-    colorscheme solarized
+    colorscheme jb-solarized
 
     " Fix comment issue until I know
     " how to really fix it
