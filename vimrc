@@ -6,6 +6,9 @@
 
 set nocompatible
 
+" disable command-t plugin
+let g:command_t_loaded = 1
+
 " setup pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
