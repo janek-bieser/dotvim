@@ -46,7 +46,12 @@ nnoremap k gk
 nnoremap <down> gj
 nnoremap <up> gk
 
+" window mappings
 nmap <leader>w <c-w>
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 
 " trigger user completion
 imap <c-space> <c-x><c-u><c-p>
@@ -71,12 +76,7 @@ set sidescrolloff=1
 
 " highlight whitespace
 set list
-
-if has('gui_running')
-    set listchars=tab:>-,trail:.,extends:>,precedes:<,nbsp:.
-else
-    set listchars=tab:\ \ ,trail:.,extends:>,precedes:<,nbsp:.
-endif
+set listchars=tab:>-,trail:.,extends:>,precedes:<,nbsp:.
 
 " tabstop configuration
 set tabstop=4
