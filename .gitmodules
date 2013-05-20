@@ -10,6 +10,7 @@
 [submodule "bundle/YankRing"]
 	path = bundle/YankRing
 	url = https://github.com/vim-scripts/YankRing.vim.git
+	ignore = dirty
 [submodule "bundle/visual-star-search"]
 	path = bundle/visual-star-search
 	url = https://github.com/bronson/vim-visual-star-search.git
@@ -19,6 +20,7 @@
 [submodule "bundle/cocoa.vim"]
 	path = bundle/cocoa.vim
 	url = https://github.com/msanders/cocoa.vim.git
+	ignore = dirty
 [submodule "bundle/vim-qml"]
 	path = bundle/vim-qml
 	url = https://github.com/peterhoeg/vim-qml.git
@@ -40,6 +42,7 @@
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
+	ignore = dirty
 [submodule "bundle/align"]
 	path = bundle/align
 	url = https://github.com/jezcope/vim-align.git
