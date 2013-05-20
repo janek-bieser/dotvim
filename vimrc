@@ -21,7 +21,6 @@ let mapleader=","
 " Basic Mappings
 " ----------------------------------------
 
-nnoremap ; :
 inoremap jj <Esc>
 
 " split line at cursor location
@@ -184,13 +183,6 @@ let g:UltiSnipsEditSplit = "vertical"
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
-
-" ----------------------------------------
-" Command-T Plug-in settings
-" ----------------------------------------
-
-let g:CommandTMaxHeight=30
 
 
 " ----------------------------------------
