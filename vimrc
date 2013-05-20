@@ -6,9 +6,6 @@
 
 set nocompatible
 
-" disable command-t plugin
-let g:command_t_loaded = 1
-
 " setup pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
@@ -21,10 +18,14 @@ let mapleader=","
 " Basic Mappings
 " ----------------------------------------
 
-inoremap jj <Esc>
+inoremap jj <ESC>
+
+" Save file
+inoremap <c-s> <ESC>:w<CR>a
+nnoremap <c-s> :w<CR>
 
 " split line at cursor location
-nnoremap K <Esc>i<CR><Esc>
+nnoremap K <ESC>i<CR><ESC>
 
 " clear last search term
 nmap <silent> <leader>/ :let @/=""<CR>
