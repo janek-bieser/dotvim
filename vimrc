@@ -59,6 +59,9 @@ nnoremap <c-l> <c-w>l
 " trigger user completion
 imap <c-space> <c-x><c-u><c-p>
 
+nnoremap <leader>lcd :lcd %:p:h<CR>
+nnoremap <leader>cd :cd %:p:h<CR>
+
 
 " ----------------------------------------
 " Text Editing
@@ -211,8 +214,9 @@ nmap <leader>f :exe g:ClangUpdateQuickFix()<CR>
 " eclim Plug-in settings
 " ----------------------------------------
 
-let g:acp_behaviorJavaEclimLength=3
-let g:EclimJavaCompleteCaseSensitive=0
+set cot-=preview
+let g:acp_behaviorJavaEclimLength = 3
+let g:EclimJavaCompleteCaseSensitive = 0
 
 
 " ----------------------------------------
