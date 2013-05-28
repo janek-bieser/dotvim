@@ -38,9 +38,9 @@ map <silent> <leader>V :silent! :source ~/.vimrc<CR>:filetype detect<CR>:exe ":e
 nmap <leader>s :setlocal spell!<CR>
 
 " copy to clipboard
-vmap <leader>y "*y
-nmap <leader>Y "*yy
-nmap <leader>p "*p
+vmap <leader>y "+y
+nmap <leader>Y "+yy
+nmap <leader>p "+p
 
 " make cursor move up/down in rows instead of lines
 " stops cursor from skipping lines when wordwrap is turned on
@@ -62,6 +62,8 @@ imap <c-space> <c-x><c-u><c-p>
 nnoremap <leader>lcd :lcd %:p:h<CR>
 nnoremap <leader>cd :cd %:p:h<CR>
 
+nnoremap <leader>lb :Latexmk<CR>:View<CR>
+
 
 " ----------------------------------------
 " Text Editing
@@ -69,6 +71,9 @@ nnoremap <leader>cd :cd %:p:h<CR>
 
 " Enable Mouse
 set mouse=a
+
+" let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+" let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " Enable syntax highlighting
 syntax on
@@ -125,6 +130,7 @@ if has('autocmd')
         au filetype text setlocal wrap nolist lbr nonumber
         au filetype markdown setlocal wrap nolist lbr
         au filetype html,xhtml,xml,xsd setlocal wrap nolist lbr ts=2 sw=2
+        au filetype tex setlocal wrap nolist lbr
 
         au filetype ruby setlocal ts=2 sw=2
     augroup END
@@ -193,8 +199,10 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " CtrlP Plug-in settings
 " ----------------------------------------
 
+let g:ctrlp_map = '<leader>o'
 let g:ctrlp_max_height = 15
-noremap <leader>b :CtrlPBuffer<CR>
+let g:ctrlp_working_path_mode = 'r0'
+noremap <leader>bo :CtrlPBuffer<CR>
 
 
 " ----------------------------------------
@@ -217,6 +225,10 @@ nmap <leader>f :exe g:ClangUpdateQuickFix()<CR>
 set cot-=preview
 let g:acp_behaviorJavaEclimLength = 3
 let g:EclimJavaCompleteCaseSensitive = 0
+
+" mappings
+nnoremap <leader>ji :JavaImport<CR>
+nnoremap <leader>jc :JavaCorrect<CR>
 
 
 " ----------------------------------------
