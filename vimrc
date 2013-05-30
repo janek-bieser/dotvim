@@ -64,6 +64,24 @@ nnoremap <leader>cd :cd %:p:h<CR>
 
 nnoremap <leader>lb :Latexmk<CR>:View<CR>
 
+" auto center
+nmap G Gzz
+nmap n nzz
+nmap N Nzz
+nmap } }zz
+nmap { {zz
+
+" let up down arrow move lines
+nmap <up> ddkP
+nmap <down> ddp
+
+" move cursor inside quotes/brackes
+inoremap '' ''<ESC>i
+inoremap "" ""<ESC>i
+inoremap () ()<ESC>i
+inoremap [] []<ESC>i
+inoremap {} {}<ESC>i
+
 
 " ----------------------------------------
 " Text Editing
@@ -71,9 +89,6 @@ nnoremap <leader>lb :Latexmk<CR>:View<CR>
 
 " Enable Mouse
 set mouse=a
-
-" let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-" let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " Enable syntax highlighting
 syntax on
