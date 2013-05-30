@@ -82,6 +82,10 @@ inoremap () ()<ESC>i
 inoremap [] []<ESC>i
 inoremap {} {}<ESC>i
 
+" insert blank line above/below
+nnoremap gO O<ESC>j
+nnoremap g<c-o> o<ESC>k
+
 
 " ----------------------------------------
 " Text Editing
