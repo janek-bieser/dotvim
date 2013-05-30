@@ -65,3 +65,6 @@
 	path = bundle/atp_vim
 	url = https://github.com/coot/atp_vim.git
 	ignore = dirty
+[submodule "bundle/vim-easymotion"]
+	path = bundle/vim-easymotion
+	url = https://github.com/Lokaltog/vim-easymotion.git
