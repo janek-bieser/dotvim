@@ -134,7 +134,6 @@ nnoremap <c-l> <c-w>l
 
 nnoremap / /\v
 
-" searching behavior
 set ignorecase " ignore case when searching
 set smartcase  " ignore case if search pattern is all lowercase, case-sensitive otherwise
 set incsearch  " show search matches as you Type
