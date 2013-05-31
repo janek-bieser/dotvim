@@ -40,9 +40,6 @@
 [submodule "bundle/align"]
 	path = bundle/align
 	url = https://github.com/jezcope/vim-align.git
-[submodule "bundle/PHP-Syntax-Garvin"]
-	path = bundle/PHP-Syntax-Garvin
-	url = https://github.com/vim-scripts/php.vim--Garvin.git
 [submodule "bundle/vim-phpqa"]
 	path = bundle/vim-phpqa
 	url = https://github.com/joonty/vim-phpqa.git
