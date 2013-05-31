@@ -76,11 +76,11 @@ nmap <up> ddkP
 nmap <down> ddp
 
 " move cursor inside quotes/brackes
-inoremap '' ''<ESC>i
-inoremap "" ""<ESC>i
-inoremap () ()<ESC>i
-inoremap [] []<ESC>i
-inoremap {} {}<ESC>i
+inoremap <leader>' ''<ESC>i
+inoremap <leader>" ""<ESC>i
+inoremap <leader>( ()<ESC>i
+inoremap <leader>[ []<ESC>i
+inoremap <leader>{ {}<ESC>i
 
 " insert blank line above/below
 nnoremap gO O<ESC>j
@@ -166,6 +166,7 @@ endif
 " command line
 set cmdheight=1
 set wildmenu
+set showcmd
 
 " show line numbers
 set number
