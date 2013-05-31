@@ -28,19 +28,19 @@ nnoremap <c-s> :w<cr>
 nnoremap K <esc>i<cr><esc>
 
 " clear last search term
-nmap <silent> <leader>/ :let @/=""<cr>
+nnoremap <silent> <leader>/ :let @/=""<cr>
 
 " open/reload .vimrc
-map <leader>v :vsp ~/.vim/vimrc<cr><c-w><cr>
-map <silent> <leader>V :silent! :source ~/.vimrc<cr>:filetype detect<cr>:exe ":echo 'vimrc reloaded'"<cr>
+nnoremap <leader>v :vsp ~/.vim/vimrc<cr><c-w><cr>
+nnoremap <silent> <leader>V :silent! :source ~/.vimrc<cr>:filetype detect<cr>:exe ":echo 'vimrc reloaded'"<cr>
 
 " toggle spelling
-nmap <leader>s :setlocal spell!<cr>
+nnoremap <leader>s :setlocal spell!<cr>
 
 " copy to clipboard
-vmap <leader>y "+y
-nmap <leader>Y "+yy
-nmap <leader>p "+p
+vnoremap <leader>y "+y
+nnoremap <leader>Y "+yy
+nnoremap <leader>p "+p
 
 " make cursor move up/down in rows instead of lines
 " stops cursor from skipping lines when wordwrap is turned on
@@ -50,14 +50,14 @@ nnoremap <down> gj
 nnoremap <up> gk
 
 " window mappings
-nmap <leader>w <c-w>
+nnoremap <leader>w <c-w>
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
 " trigger user completion
-imap <c-space> <c-x><c-u><c-p>
+inoremap <c-space> <c-x><c-u><c-p>
 
 nnoremap <leader>lcd :lcd %:p:h<cr>
 nnoremap <leader>cd :cd %:p:h<cr>
@@ -65,15 +65,15 @@ nnoremap <leader>cd :cd %:p:h<cr>
 nnoremap <leader>lb :Latexmk<cr>:View<cr>
 
 " auto center
-nmap G Gzz
-nmap n nzz
-nmap N Nzz
-nmap } }zz
-nmap { {zz
+nnoremap G Gzz
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap } }zz
+nnoremap { {zz
 
 " let up down arrow move lines
-nmap <up> ddkP
-nmap <down> ddp
+nnoremap <up> ddkP
+nnoremap <down> ddp
 
 " move cursor inside quotes/brackes
 inoremap <leader>' ''<esc>i
@@ -90,6 +90,9 @@ nnoremap g<c-o> o<esc>k
 nnoremap * *<c-o>
 
 nnoremap / /\v
+
+nnoremap <c-u> viwUe
+inoremap <c-u> <esc>viwUea
 
 
 " ----------------------------------------
@@ -240,7 +243,7 @@ let g:clang_close_preview = 1
 let g:clang_complete_copen = 1
 let g:clang_snippets_engine = 'ultisnips'
 
-nmap <leader>f :exe g:ClangUpdateQuickFix()<cr>
+nnoremap <leader>f :exe g:ClangUpdateQuickFix()<cr>
 
 
 " ----------------------------------------
