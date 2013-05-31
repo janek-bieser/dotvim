@@ -18,24 +18,24 @@ let mapleader=","
 " Basic Mappings
 " ----------------------------------------
 
-inoremap jj <ESC>
+inoremap jj <esc>
 
 " Save file
-inoremap <c-s> <ESC>:w<CR>a
-nnoremap <c-s> :w<CR>
+inoremap <c-s> <esc>:w<cr>a
+nnoremap <c-s> :w<cr>
 
 " split line at cursor location
-nnoremap K <ESC>i<CR><ESC>
+nnoremap K <esc>i<cr><esc>
 
 " clear last search term
-nmap <silent> <leader>/ :let @/=""<CR>
+nmap <silent> <leader>/ :let @/=""<cr>
 
 " open/reload .vimrc
-map <leader>v :vsp ~/.vim/vimrc<CR><C-W><CR>
-map <silent> <leader>V :silent! :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+map <leader>v :vsp ~/.vim/vimrc<cr><c-w><cr>
+map <silent> <leader>V :silent! :source ~/.vimrc<cr>:filetype detect<cr>:exe ":echo 'vimrc reloaded'"<cr>
 
 " toggle spelling
-nmap <leader>s :setlocal spell!<CR>
+nmap <leader>s :setlocal spell!<cr>
 
 " copy to clipboard
 vmap <leader>y "+y
@@ -59,10 +59,10 @@ nnoremap <c-l> <c-w>l
 " trigger user completion
 imap <c-space> <c-x><c-u><c-p>
 
-nnoremap <leader>lcd :lcd %:p:h<CR>
-nnoremap <leader>cd :cd %:p:h<CR>
+nnoremap <leader>lcd :lcd %:p:h<cr>
+nnoremap <leader>cd :cd %:p:h<cr>
 
-nnoremap <leader>lb :Latexmk<CR>:View<CR>
+nnoremap <leader>lb :Latexmk<cr>:View<cr>
 
 " auto center
 nmap G Gzz
@@ -76,15 +76,20 @@ nmap <up> ddkP
 nmap <down> ddp
 
 " move cursor inside quotes/brackes
-inoremap <leader>' ''<ESC>i
-inoremap <leader>" ""<ESC>i
-inoremap <leader>( ()<ESC>i
-inoremap <leader>[ []<ESC>i
-inoremap <leader>{ {}<ESC>i
+inoremap <leader>' ''<esc>i
+inoremap <leader>" ""<esc>i
+inoremap <leader>( ()<esc>i
+inoremap <leader>[ []<esc>i
+inoremap <leader>{ {}<esc>i
 
 " insert blank line above/below
-nnoremap gO O<ESC>j
-nnoremap g<c-o> o<ESC>k
+nnoremap gO O<esc>j
+nnoremap g<c-o> o<esc>k
+
+" don't move on *
+nnoremap * *<c-o>
+
+nnoremap / /\v
 
 
 " ----------------------------------------
@@ -222,7 +227,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:ctrlp_map = '<leader>o'
 let g:ctrlp_max_height = 15
 let g:ctrlp_working_path_mode = 'r0'
-noremap <leader>bo :CtrlPBuffer<CR>
+noremap <leader>bo :CtrlPBuffer<cr>
 
 
 " ----------------------------------------
@@ -235,7 +240,7 @@ let g:clang_close_preview = 1
 let g:clang_complete_copen = 1
 let g:clang_snippets_engine = 'ultisnips'
 
-nmap <leader>f :exe g:ClangUpdateQuickFix()<CR>
+nmap <leader>f :exe g:ClangUpdateQuickFix()<cr>
 
 
 " ----------------------------------------
@@ -247,8 +252,8 @@ let g:acp_behaviorJavaEclimLength = 3
 let g:EclimJavaCompleteCaseSensitive = 0
 
 " mappings
-nnoremap <leader>ji :JavaImport<CR>
-nnoremap <leader>jc :JavaCorrect<CR>
+nnoremap <leader>ji :JavaImport<cr>
+nnoremap <leader>jc :JavaCorrect<cr>
 
 
 " ----------------------------------------
