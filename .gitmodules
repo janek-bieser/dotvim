@@ -4,9 +4,6 @@
 [submodule "bundle/vim-sparkup"]
 	path = bundle/vim-sparkup
 	url = http://github.com/bingaman/vim-sparkup.git
-[submodule "bundle/Colour-Sampler-Pack"]
-	path = bundle/Colour-Sampler-Pack
-	url = https://github.com/vim-scripts/Colour-Sampler-Pack.git
 [submodule "bundle/YankRing"]
 	path = bundle/YankRing
 	url = https://github.com/vim-scripts/YankRing.vim.git
