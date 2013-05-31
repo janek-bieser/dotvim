@@ -11,8 +11,10 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 " change the mapleader from \ to ,
-let mapleader=","
+let mapleader = ","
+let maplocalleader = "\\"
 
+set encoding=utf-8
 
 " ----------------------------------------
 " Basic Mappings
@@ -30,9 +32,16 @@ nnoremap K <esc>i<cr><esc>
 " clear last search term
 nnoremap <silent> <leader>/ :let @/=""<cr>
 
-" open/reload .vimrc
-nnoremap <leader>v :vsp ~/.vim/vimrc<cr><c-w><cr>
+" open configuration files
+nnoremap <leader>ev :vsp ~/.vim/vimrc<cr><c-w><cr>
+nnoremap <leader>ez :vsp ~/.zshrc<cr><c-w><cr>
+nnoremap <leader>et :vsp ~/.tmux.conf<cr><c-w><cr>
+
+" reload vimrc
 nnoremap <silent> <leader>V :silent! :source ~/.vimrc<cr>:filetype detect<cr>:exe ":echo 'vimrc reloaded'"<cr>
+
+" source/execute current line
+nnoremap <leader>S :exe getline('.')<cr>
 
 " toggle spelling
 nnoremap <leader>s :setlocal spell!<cr>
@@ -50,7 +59,6 @@ nnoremap <down> gj
 nnoremap <up> gk
 
 " window mappings
-nnoremap <leader>w <c-w>
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
@@ -263,4 +271,8 @@ nnoremap <leader>jc :JavaCorrect<cr>
 " Powerline Plug-in settings
 " ----------------------------------------
 
-set rtp+=/usr/local/powerline/powerline/bindings/vim
+let g:Powerline_symbols = 'fancy'
+let g:Powerline_theme = 'long'
+let g:Powerline_colorscheme = 'solarized16'
+let g:Powerline_symbols_override = { 'BRANCH': [0x2213], 'LINE': 'L', 'RO': '-', 'FT': 'ft' }
+let g:Powerline_dividers_override = [']>', '>', '<[', '<']
