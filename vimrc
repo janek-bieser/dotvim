@@ -6,7 +6,7 @@
 " Pathogen {{{
 
 " setup pathogen
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 call pathogen#helptags()
 
 " END Pathogen }}}
@@ -71,6 +71,9 @@ nnoremap <leader>cd :cd %:p:h<cr>
 " Edit & Navigate Files {{{
 
 inoremap jj <esc>
+
+" toggle NERDTree
+nnoremap <leader>n :NERDTreeToggle<cr>
 
 " auto center
 nnoremap G Gzz
