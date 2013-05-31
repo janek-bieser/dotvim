@@ -87,8 +87,6 @@ nnoremap <down> ddp
 " stops cursor from skipping lines when wordwrap is turned on
 nnoremap j gj
 nnoremap k gk
-nnoremap <down> gj
-nnoremap <up> gk
 
 " move cursor inside quotes/brackes
 inoremap <leader>' ''<esc>i
