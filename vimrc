@@ -82,10 +82,6 @@ nnoremap N Nzz
 nnoremap } }zz
 nnoremap { {zz
 
-" let up down arrow move lines
-nnoremap <up> ddkP
-nnoremap <down> ddp
-
 " make cursor move up/down in rows instead of lines
 " stops cursor from skipping lines when wordwrap is turned on
 nnoremap j gj
@@ -97,10 +93,6 @@ inoremap <leader>" ""<esc>i
 inoremap <leader>( ()<esc>i
 inoremap <leader>[ []<esc>i
 inoremap <leader>{ {}<esc>i
-
-" insert blank line above/below
-nnoremap gO O<esc>j
-nnoremap g<c-o> o<esc>k
 
 " split line at cursor location
 nnoremap K <esc>i<cr><esc>
@@ -123,10 +115,17 @@ nnoremap <leader>s :setlocal spell!<cr>
 
 " Windows {{{
 
+" navigate windows
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
+
+" resize windows
+nnoremap <left> <c-w><
+nnoremap <right> <c-w>>
+nnoremap <up> <c-w>+
+nnoremap <down> <c-w>-
 
 " END Windows }}}
 
@@ -218,7 +217,7 @@ endif
 " File Specific Settings {{{
 
 if has('autocmd')
-    augroup formattingEx
+    augroup formatting
         au!
 
         " use word wrap
@@ -230,8 +229,10 @@ if has('autocmd')
         au filetype ruby setlocal ts=2 sw=2
     augroup END
 
-    " autosave
-    au BufLeave,FocusLost * silent! wall
+    augroup autosave
+        au!
+        au BufLeave,FocusLost * silent! wall
+    augroup END
 endif
 
 " END File Specific Settings }}}
