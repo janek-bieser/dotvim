@@ -185,11 +185,11 @@ set laststatus=2
 " highlight line the cursor is currently on
 set cursorline
 
-set background=dark
-
 if has('gui_running')
     " set font-family and size
     set guifont=Anonymous\ Pro\ for\ Powerline:h14
+
+    set background=light
 
     " colorscheme
     colorscheme jb-solarized
@@ -202,6 +202,7 @@ if has('gui_running')
 endif
 
 if !has('gui_running')
+    set background=dark
     " solarized options 
     let g:solarized_termcolors = 16
     colorscheme jb-solarized
@@ -284,10 +285,16 @@ nnoremap <leader>jc :JavaCorrect<cr>
 " Powerline {{{
 
 let g:Powerline_symbols = 'fancy'
-let g:Powerline_theme = 'long'
-let g:Powerline_colorscheme = 'solarized16'
 let g:Powerline_symbols_override = { 'BRANCH': [0x2213], 'LINE': 'L', 'RO': '-', 'FT': 'ft' }
 let g:Powerline_dividers_override = [']>', '>', '<[', '<']
+
+if has('gui_running')
+    let g:Powerline_colorscheme = 'solarized'
+endif
+
+if !has('gui_running')
+    let g:Powerline_colorscheme = 'solarized16'
+endif
 
 " END Powerline }}}
 
