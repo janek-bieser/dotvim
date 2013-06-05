@@ -141,8 +141,9 @@ set hlsearch   " highlight search result
 " clear last search term
 nnoremap <silent> <leader>/ :let @/=""<cr>
 
-" don't move on *
+" don't move on * or #
 nnoremap * *<c-o>
+nnoremap # #<c-o>
 
 " END Searching }}}
  
