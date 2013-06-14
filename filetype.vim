@@ -3,4 +3,5 @@ if exists("did_load_filetypes")
 endif
 augroup filetypedetect
 	au! BufNewFile,BufRead *.as setf actionscript
+	au! BufNewFile,BufRead *.md setf markdown
 augroup END
