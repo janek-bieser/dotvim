@@ -31,44 +31,35 @@ endglobal
 # Class Templates
 #
 
-snippet cl "Class Template with field defenitions." !b
+snippet cl "Class Template" !b
 //
-// $3.as
-// Created by ${1:`echo $USER`} on `date "+%B %d, %Y"`
+// `!p snip.rv = snip.basename`.as
+// Created by ${1:Janek Bieser} on `date "+%B %d, %Y"`
 //
 
 package ${2:package}
 {
 	/**
-	 * $3
+	 * `!p snip.rv = snip.basename`
 	 * @author $1
 	 */
-	public class ${3:`!p snip.rv = snip.basename or "untitled"`} ${4:extends ${5:Object}} ${6:implements ${7}}
-	{`!p
-args = getArgs(t[8])
-if len(args) == 0:
-	snip.rv = ""
-for i in args:
-	snip.rv += "\n\t\tprivate var " + i[0] + ":"  + i[1] + ";"
-if len(args) > 0:
-	snip.rv += "\n"`
-		`!p snip.rv = asdoc("Constructor", t[8], "void")`
-		public function $3(${8})
-		{`!p
-args = getArgs(t[8])
-if len(args) == 0: snip.rv = ""
-if len(args) > 0:
-	for i in args:
-		snip.rv += "\n\t\t\tthis." + i[0] + " = " + i[0] + ";"`
-		}$0
+	public class `!p snip.rv = snip.basename` extends ${3:Object}
+	{
+		/**
+		 * Constructor
+		 */
+		public function `!p snip.rv = snip.basename`()
+		{
+			$0
+		}
 	}
 }
 endsnippet
 
 snippet cldoc "Document Class Template" !b
 //
-// $3.as
-// Created by ${1:`echo $USER`} on `date "+%B %d, %Y"`
+// `!p snip.rv = snip.basename`.as
+// Created by ${1:Janek Bieser} on `date "+%B %d, %Y"`
 //
 
 package ${2:package}
@@ -77,10 +68,10 @@ package ${2:package}
 	import flash.events.Event;
 
 	/**
-	 * $3
+	 * `!p snip.rv = snip.basename`
 	 * @author $1
 	 */
-	public class ${3:`!p snip.rv = snip.basename`} extends Sprite
+	public class `!p snip.rv = snip.basename` extends Sprite
 	{
 		/**
 		 * Initialization
@@ -94,9 +85,19 @@ package ${2:package}
 		 * Default Constructor
 		 * Initialization is done in |init|
 		 */
-		public function $3()
+		public function `!p snip.rv = snip.basename`()
 		{
-			this.addEventListener(Event.ADDED_TO_STAGE, function(e:Event) { init(); });
+			if (this.stage == null) {
+				this.addEventListener(Event.ADDED_TO_STAGE, addedToStage_handler);
+			} else {
+				init();
+			}
+		}
+
+		private function addedToStage_handler(e:Event):void
+		{
+			this.removeEventListener(Event.ADDED_TO_STAGE, addedToStage_handler);
+			init();
 		}
 	}
 }
