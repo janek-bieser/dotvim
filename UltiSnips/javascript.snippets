@@ -1,0 +1,39 @@
+#
+# Globals
+#
+
+global !p
+
+def getArgs(group):
+	import re
+	word = re.compile('\w+')
+	return [i.split(",") for i in word.findall(group) ]
+
+#
+# s: The snip Object
+# args: The parameter list 
+#
+def appendJSDocParams(s, args):
+	if len(args) > 0:
+		s += " *"
+		for i in args:
+			s += " * @param {TYPE} " + i[0] + " "
+
+endglobal
+
+
+#
+# Templates
+#
+
+snippet f "function" !b
+/**
+ * ${3:Description...}`!p
+snip.rv = ""
+appendJSDocParams(snip, getArgs(t[2]))
+`
+ */
+function ${1:name}(${2:args}) {
+	$0
+}
+endsnippet
