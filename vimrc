@@ -207,11 +207,6 @@ if !has('gui_running')
     " solarized options 
     let g:solarized_termcolors = 16
     colorscheme jb-solarized
-
-    " Fix comment issue until I know
-    " how to really fix it
-    exe ":hi Comment cterm=none"
-    exe ":hi vimLineComment cterm=none"
 endif
 
 " END GUI Settings }}}
@@ -249,6 +244,27 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " END UltiSnips }}}
+
+" JSHint {{{
+
+if has('autocmd')
+    augroup JSHint
+    au!
+    " run the JSHint command after saving the file
+    au BufWritePost *.js :call RunJSHintCommand()
+    augroup END
+endif
+
+" set to 0 to disable js hinting by default
+let g:jshint_enabled=1
+
+function! RunJSHintCommand()
+    if g:jshint_enabled
+        :JSHint
+    endif
+endfunction
+
+" END JSHint }}}
 
 " CtrlP {{{
 
@@ -300,5 +316,6 @@ endif
 " END Powerline }}}
 
 " END Plugins }}}
+
 
 " vim: set foldmethod=marker:
