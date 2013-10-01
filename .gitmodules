@@ -65,3 +65,9 @@
 [submodule "bundle/hexmode"]
 	path = bundle/hexmode
 	url = https://github.com/fidian/hexmode.git
+[submodule "bundle/grunt"]
+	path = bundle/grunt
+	url = https://github.com/mklabs/grunt.vim.git
+[submodule "bundle/jshint"]
+	path = bundle/jshint
+	url = git://github.com/walm/jshint.vim
