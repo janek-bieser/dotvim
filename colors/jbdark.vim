@@ -44,25 +44,36 @@ exe "hi Number ctermfg=" . s:magenta_b   . " ctermbg=none cterm=none"
 exe "hi Boolean ctermfg=" . s:magenta_n   . " ctermbg=none cterm=none"
 exe "hi Special ctermfg=" . s:magenta_n   . " ctermbg=none cterm=none"
 
-exe "hi Folded ctermfg=" . s:blue_n   . " ctermbg=" . "none" . " cterm=none"
+exe "hi Folded ctermfg=" . s:blue_b   . " ctermbg=" . "none" . " cterm=none"
 exe "hi SpecialKey ctermfg=" . s:black_b . " ctermbg=none cterm=none"
+
+exe "hi Title ctermfg=" . s:red_n . " ctermbg=none cterm=none"
 
 
 " ------------------------------------------------------------------
 " GUI
 " ------------------------------------------------------------------
 
-exe "hi LineNr  ctermfg=" . s:black_b . " ctermbg=none cterm=none"
+exe "hi LineNr  ctermfg=" . s:black_b . " ctermbg=" . s:black_n . " cterm=none"
 exe "hi CursorLineNr  ctermfg=" . s:black_b . " ctermbg=none cterm=none"
 exe "hi CursorLine  ctermfg=none ctermbg=" . s:black_n . " cterm=none"
-exe "hi VertSplit ctermfg=" . s:black_b . " ctermbg=" . "none" . " cterm=none"
-exe "hi SignColumn ctermfg=none ctermbg=none cterm=none"
+exe "hi VertSplit ctermfg=" . s:black_b . " ctermbg=" . s:black_n . " cterm=none"
+exe "hi SignColumn ctermfg=none ctermbg=" . s:black_n . " cterm=none"
 exe "hi Directory  ctermfg=" . s:cyan_b . " ctermbg=none cterm=none"
 
+exe "hi Pmenu  ctermfg=" . "none" . " ctermbg=" . s:black_n . " cterm=none"
+exe "hi PmenuSel ctermfg=" . s:black_n . " ctermbg=" . s:blue_n . " cterm=none"
 
 " ------------------------------------------------------------------
 " JavaScript
 " ------------------------------------------------------------------
 
 exe "hi javaScriptValue ctermfg=" . s:magenta_b   . " ctermbg=none cterm=none"
+
+
+" ------------------------------------------------------------------
+" HTML
+" ------------------------------------------------------------------
+
+exe "hi htmlBold cterm=bold"
 
