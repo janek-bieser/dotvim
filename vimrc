@@ -220,7 +220,7 @@ if has('autocmd')
         " use word wrap
         au filetype text setlocal wrap nolist lbr nonumber
         au filetype markdown setlocal wrap nolist lbr
-        au filetype html,xhtml,xml,xsd setlocal wrap nolist lbr ts=2 sw=2
+        au filetype html,xhtml,xml,xsd setlocal wrap nolist lbr
         au filetype tex setlocal wrap nolist lbr
 
         au filetype ruby setlocal ts=2 sw=2
@@ -282,6 +282,15 @@ let g:clang_snippets = 1
 let g:clang_close_preview = 1
 let g:clang_complete_copen = 1
 let g:clang_snippets_engine = 'ultisnips'
+let g:clang_library_path = '/Users/janekbieser/Developer/libs/C_Cpp/llvm-clang/build/Debug+Asserts/lib/'
+
+if has('autocmd')
+    augroup clang_complete
+    au!
+    " run g:ClangUpdateQuickFix() after saving a buffer
+    au BufWritePost *.c,*.cpp,*.h,*.h,*.m,*.mm :exe g:ClangUpdateQuickFix()
+    augroup END
+endif
 
 nnoremap <leader>f :exe g:ClangUpdateQuickFix()<cr>
 
