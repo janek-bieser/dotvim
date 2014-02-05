@@ -296,18 +296,6 @@ nnoremap <leader>f :exe g:ClangUpdateQuickFix()<cr>
 
 " END Clang Complete }}}
 
-" eclim {{{
-
-set cot-=preview
-let g:acp_behaviorJavaEclimLength = 3
-let g:EclimJavaCompleteCaseSensitive = 0
-
-" mappings
-nnoremap <leader>ji :JavaImport<cr>
-nnoremap <leader>jc :JavaCorrect<cr>
-
-" END eclim }}}
-
 " Powerline {{{
 
 let g:Powerline_symbols = 'fancy'
