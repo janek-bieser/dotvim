@@ -8,6 +8,7 @@ augroup filetypedetect
     au! BufNewFile,BufRead *.json setf javascript.json
     au! BufNewFile,BufRead *.gradle setf groovy
     au! BufNewFile,BufRead *.story setf gherkin
+    au! BufNewFile,BufRead *.hbs,*.handlebars setf html
 augroup END
 
 augroup syntaxdetect
