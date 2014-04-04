@@ -69,3 +69,6 @@
 	path = bundle/jshint
 	url = git://github.com/walm/jshint.vim
 	ignore = dirty
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
