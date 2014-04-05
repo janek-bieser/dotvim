@@ -275,27 +275,6 @@ noremap <leader>bo :CtrlPBuffer<cr>
 
 " END CtrlP }}}
 
-" Clang Complete {{{
-
-let g:clang_auto_select = 1
-let g:clang_snippets = 1
-let g:clang_close_preview = 1
-let g:clang_complete_copen = 1
-let g:clang_snippets_engine = 'ultisnips'
-let g:clang_library_path = '/Users/janekbieser/Developer/libs/C_Cpp/llvm-clang/build/Debug+Asserts/lib/'
-
-if has('autocmd')
-    augroup clang_complete
-    au!
-    " run g:ClangUpdateQuickFix() after saving a buffer
-    au BufWritePost *.c,*.cpp,*.h,*.h,*.m,*.mm :exe g:ClangUpdateQuickFix()
-    augroup END
-endif
-
-nnoremap <leader>f :exe g:ClangUpdateQuickFix()<cr>
-
-" END Clang Complete }}}
-
 " Powerline {{{
 
 let g:Powerline_symbols = 'fancy'
@@ -311,6 +290,14 @@ if !has('gui_running')
 endif
 
 " END Powerline }}}
+
+" YouCompleteMe {{{
+
+let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_key_list_previous_completion = ['<Up>']
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
+" END YouCompleteMe }}}
 
 " END Plugins }}}
 
