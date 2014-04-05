@@ -30,9 +30,6 @@
 [submodule "bundle/repeat"]
 	path = bundle/repeat
 	url = https://github.com/tpope/vim-repeat.git
-[submodule "bundle/taglist"]
-	path = bundle/taglist
-	url = https://github.com/vim-scripts/taglist.vim.git
 	ignore = dirty
 [submodule "bundle/align"]
 	path = bundle/align
