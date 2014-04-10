@@ -25,8 +25,6 @@ let s:cyan_b    = 14
 let s:white_n   =  7
 let s:white_b   = 15
 
-" TODO to stuff
-
 
 " ------------------------------------------------------------------
 " General

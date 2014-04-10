@@ -146,7 +146,7 @@ nnoremap * *<c-o>
 nnoremap # #<c-o>
 
 " END Searching }}}
- 
+
 " Copy & Paste {{{
 
 " copy to clipboard
@@ -204,7 +204,7 @@ endif
 
 if !has('gui_running')
     set background=dark
-    " solarized options 
+    " solarized options
     let g:solarized_termcolors = 16
     colorscheme jb-solarized
 endif
@@ -274,22 +274,6 @@ let g:ctrlp_working_path_mode = 'r0'
 noremap <leader>bo :CtrlPBuffer<cr>
 
 " END CtrlP }}}
-
-" Powerline {{{
-
-let g:Powerline_symbols = 'fancy'
-let g:Powerline_symbols_override = { 'BRANCH': [0x2213], 'LINE': 'L', 'RO': '-', 'FT': 'ft' }
-let g:Powerline_dividers_override = [']>', '>', '<[', '<']
-
-if has('gui_running')
-    let g:Powerline_colorscheme = 'solarized'
-endif
-
-if !has('gui_running')
-    let g:Powerline_colorscheme = 'solarized16'
-endif
-
-" END Powerline }}}
 
 " YouCompleteMe {{{
 
