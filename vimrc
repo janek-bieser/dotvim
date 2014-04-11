@@ -283,6 +283,17 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " END YouCompleteMe }}}
 
+" Airline {{{
+
+let g:airline_left_sep = '>'
+let g:airline_right_sep = '<'
+
+let g:airline_theme = 'wombat'
+"let g:airline_theme = 'lucius'
+"let g:airline_theme = 'monochrome'
+
+" END Airline }}}
+
 " END Plugins }}}
 
 

@@ -62,6 +62,14 @@ exe "hi Directory  ctermfg=" . s:cyan_b . " ctermbg=none cterm=none"
 exe "hi Pmenu  ctermfg=" . "none" . " ctermbg=" . s:black_n . " cterm=none"
 exe "hi PmenuSel ctermfg=" . s:black_n . " ctermbg=" . s:blue_n . " cterm=none"
 
+
+" ------------------------------------------------------------------
+" Java
+" ------------------------------------------------------------------
+
+exe "hi javaCommentTitle ctermfg=" . s:black_b . " ctermbg=none cterm=italic"
+
+
 " ------------------------------------------------------------------
 " JavaScript
 " ------------------------------------------------------------------
