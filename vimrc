@@ -256,7 +256,7 @@ if has('autocmd')
 endif
 
 " set to 0 to disable js hinting by default
-let g:jshint_enabled=1
+let g:jshint_enabled=0
 
 function! RunJSHintCommand()
     if g:jshint_enabled
@@ -265,6 +265,12 @@ function! RunJSHintCommand()
 endfunction
 
 " END JSHint }}}
+
+" Syntastic {{{
+
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", ]
+
+" END Syntastic }}}
 
 " CtrlP {{{
 

@@ -12,6 +12,20 @@ snippet xhtml1 "XHTML 1.0 Strict Template" b
 </html>
 endsnippet
 
+snippet html5 "XHTML 5 Template" b
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<title>${1:`!p snip.rv = snip.basename or 'Title'`}</title>
+</head>
+<body>
+	$0
+</body>
+</html>
+endsnippet
+
 snippet js "Script Tag (External)" !b
 <script type="text/javascript" src="$1"></script>
 endsnippet
