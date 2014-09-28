@@ -246,31 +246,11 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " END UltiSnips }}}
 
-" JSHint {{{
-
-if has('autocmd')
-    augroup JSHint
-    au!
-    " run the JSHint command after saving the file
-    au BufWritePost *.js :call RunJSHintCommand()
-    augroup END
-endif
-
-" set to 0 to disable js hinting by default
-let g:jshint_enabled=0
-
-function! RunJSHintCommand()
-    if g:jshint_enabled
-        :JSHint
-    endif
-endfunction
-
-" END JSHint }}}
-
 " Syntastic {{{
 
 let g:syntastic_html_tidy_ignore_errors=["proprietary attribute \"ng-", "proprietary attribute \"ui-", "<bc-", "discarding unexpected </bc-"]
 let g:syntastic_enable_html_checker=0
+let g:syntastic_javascript_checkers=['jsxhint']
 
 " END Syntastic }}}
 
