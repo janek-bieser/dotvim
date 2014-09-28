@@ -9,6 +9,7 @@ augroup filetypedetect
     au! BufNewFile,BufRead *.gradle setf groovy
     au! BufNewFile,BufRead *.story setf gherkin
     au! BufNewFile,BufRead *.hbs,*.handlebars setf html
+    au! BufNewFile,BufRead *.creole,*.wiki setf creole
 augroup END
 
 augroup syntaxdetect

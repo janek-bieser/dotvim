@@ -49,10 +49,6 @@
 [submodule "bundle/grunt"]
 	path = bundle/grunt
 	url = https://github.com/mklabs/grunt.vim.git
-[submodule "bundle/jshint"]
-	path = bundle/jshint
-	url = git://github.com/walm/jshint.vim
-	ignore = dirty
 [submodule "bundle/YouCompleteMe"]
 	path = bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
@@ -69,3 +65,6 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/vim-jade"]
+	path = bundle/vim-jade
+	url = https://github.com/digitaltoad/vim-jade.git

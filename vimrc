@@ -61,6 +61,7 @@ set noerrorbells
 " don't write backup files
 set nobackup
 set noswapfile
+set nowritebackup
 
 " set working directory
 nnoremap <leader>lcd :lcd %:p:h<cr>
@@ -268,7 +269,8 @@ endfunction
 
 " Syntastic {{{
 
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", ]
+let g:syntastic_html_tidy_ignore_errors=["proprietary attribute \"ng-", "proprietary attribute \"ui-", "<bc-", "discarding unexpected </bc-"]
+let g:syntastic_enable_html_checker=0
 
 " END Syntastic }}}
 
