@@ -10,6 +10,7 @@ augroup filetypedetect
     au! BufNewFile,BufRead *.story setf gherkin
     au! BufNewFile,BufRead *.hbs,*.handlebars setf html
     au! BufNewFile,BufRead *.creole,*.wiki setf creole
+    au! BufNewFile,BufRead *.conf setf sh
 augroup END
 
 augroup syntaxdetect

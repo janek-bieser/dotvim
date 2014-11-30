@@ -20,6 +20,7 @@ let mapleader = ","
 let maplocalleader = "\\"
 
 set encoding=utf-8
+set termencoding=utf8
 
 " Enable Mouse
 set mouse=a
@@ -205,9 +206,7 @@ endif
 
 if !has('gui_running')
     set background=dark
-    " solarized options
-    let g:solarized_termcolors = 16
-    colorscheme jb-solarized
+    colorscheme jbdark
 endif
 
 " END GUI Settings }}}
