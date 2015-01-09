@@ -68,6 +68,9 @@ set nowritebackup
 nnoremap <leader>lcd :lcd %:p:h<cr>
 nnoremap <leader>cd :cd %:p:h<cr>
 
+" dont show preview buffer on completions
+set completeopt=menuone
+
 " END General }}}
 
 " Edit & Navigate Files {{{
