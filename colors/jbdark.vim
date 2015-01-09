@@ -43,7 +43,7 @@ exe "hi Boolean ctermfg=" . s:magenta_n   . " ctermbg=none cterm=none"
 exe "hi Special ctermfg=" . s:magenta_n   . " ctermbg=none cterm=none"
 
 exe "hi Folded ctermfg=" . s:blue_b   . " ctermbg=" . "none" . " cterm=none"
-exe "hi SpecialKey ctermfg=" . s:black_b . " ctermbg=none cterm=none"
+exe "hi SpecialKey ctermfg=" . s:black_n . " ctermbg=none cterm=none"
 
 exe "hi Title ctermfg=" . s:red_n . " ctermbg=none cterm=none"
 
@@ -61,6 +61,12 @@ exe "hi Directory  ctermfg=" . s:cyan_b . " ctermbg=none cterm=none"
 
 exe "hi Pmenu  ctermfg=" . "none" . " ctermbg=" . s:black_n . " cterm=none"
 exe "hi PmenuSel ctermfg=" . s:black_n . " ctermbg=" . s:blue_n . " cterm=none"
+
+" Diffs
+exe "hi DiffAdd  ctermfg=" . s:black_n . " ctermbg=" . s:green_n . " cterm=none"
+exe "hi DiffChange  ctermfg=" . s:blue_b . " ctermbg=none cterm=none"
+exe "hi DiffText  ctermfg=" . s:black_n . " ctermbg=" . s:cyan_b . " cterm=none"
+exe "hi DiffDelete  ctermfg=" . s:red_b . " ctermbg=none cterm=none"
 
 
 " ------------------------------------------------------------------
