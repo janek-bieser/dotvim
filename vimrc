@@ -267,6 +267,8 @@ noremap <leader>bo :CtrlPBuffer<cr>
 
 " YouCompleteMe {{{
 
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+
 let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion = ['<Up>']
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -275,14 +277,24 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " Airline {{{
 
-let g:airline_left_sep = '>'
-let g:airline_right_sep = '<'
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 
 let g:airline_theme = 'wombat'
 "let g:airline_theme = 'lucius'
 "let g:airline_theme = 'monochrome'
 
 " END Airline }}}
+
+" Go {{{
+
+let g:go_fmt_command = "goimports"
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+
+" END Go }}}
 
 " END Plugins }}}
 
