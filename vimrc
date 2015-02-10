@@ -34,6 +34,7 @@ filetype plugin indent on
 set nowrap
 set sidescroll=1
 set sidescrolloff=1
+set textwidth=80
 
 " highlight whitespace
 set list
@@ -295,6 +296,13 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 
 " END Go }}}
+
+" JSX {{{
+
+let g:jsx_ext_required = 0
+let g:jsx_pragma_required = 0
+
+" END JSX }}}
 
 " END Plugins }}}
 
