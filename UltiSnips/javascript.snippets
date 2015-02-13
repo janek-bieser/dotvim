@@ -58,6 +58,53 @@ snippet mod "module.exports"
 module.exports = $0
 endsnippet
 
+# ES6 Templates
+
+snippet im "import (es6)"
+import ${1:{${2:elements}}} from '${3:module}';
+endsnippet
+
+snippet ex "export (es6)"
+export $1;$0
+endsnippet
+
+snippet exd "export default (es6)"
+export default $1;$0
+endsnippet
+
+snippet class "class (es6)"
+/**
+ * ${4:Description...}
+ */
+class ${1:ClassName}${2: extends ${3:Subclass}} {
+	$0
+}
+endsnippet
+
+snippet ctr "constructor (es6)"
+/**
+ * Constructor.`!p
+snip.rv = ""
+appendJSDocParams(snip, getArgs(t[1]))
+`
+ */
+constructor(${1:args}) {
+	$0
+}
+endsnippet
+
+snippet m "method (es6)"
+/**
+ * ${3:Description...}`!p
+snip.rv = ""
+appendJSDocParams(snip, getArgs(t[2]))
+`
+ */
+${1:name}(${2:args}) {
+	$0
+}
+endsnippet
+
 # ReactJS Templates
 
 snippet jsx "@jsx comment" !b
@@ -70,6 +117,26 @@ var ${1:ClassName} = React.createClass({
 		$0
 	}
 });
+endsnippet
+
+snippet rcl "ReactJS Class (es6)" !b
+import React from 'react';
+
+/**
+ * ${2:Description...}
+ */
+class ${1:ClassName} extends React.Component {
+
+	/**
+	 * Render $1.
+	 */
+	render() {
+		$0
+	}
+
+}
+
+export default $1;
 endsnippet
 
 snippet rgis "@jsx comment" !b
