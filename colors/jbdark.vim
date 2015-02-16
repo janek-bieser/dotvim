@@ -30,43 +30,45 @@ let s:white_b   = 15
 " General
 " ------------------------------------------------------------------
 
-exe "hi Statement ctermfg=" . s:yellow_b . " ctermbg=none cterm=none"
-exe "hi Comment  ctermfg=" . s:black_b   . " ctermbg=none cterm=italic"
-exe "hi Function ctermfg=" . s:blue_n   . " ctermbg=none cterm=none"
-exe "hi Todo ctermfg=" . s:red_n . " ctermbg=none cterm=underline"
-exe "hi PreProc ctermfg=" . s:yellow_n . " ctermbg=none cterm=none"
+exe "hi Statement ctermfg =" . s:yellow_b . " ctermbg=none cterm=none"
+exe "hi Comment   ctermfg =" . s:black_b  . " ctermbg=none cterm=italic"
+exe "hi Function  ctermfg =" . s:blue_n   . " ctermbg=none cterm=none"
+exe "hi Todo      ctermfg =" . s:red_n    . " ctermbg=none cterm=underline"
+exe "hi PreProc   ctermfg =" . s:yellow_n . " ctermbg=none cterm=none"
 
-exe "hi Type ctermfg=" . s:cyan_n . " ctermbg=none cterm=none"
-exe "hi String ctermfg=" . s:green_n   . " ctermbg=none cterm=none"
-exe "hi Number ctermfg=" . s:magenta_b   . " ctermbg=none cterm=none"
-exe "hi Boolean ctermfg=" . s:magenta_n   . " ctermbg=none cterm=none"
-exe "hi Special ctermfg=" . s:magenta_n   . " ctermbg=none cterm=none"
+exe "hi Type    ctermfg =" . s:cyan_n    . " ctermbg=none cterm=none"
+exe "hi String  ctermfg =" . s:green_n   . " ctermbg=none cterm=none"
+exe "hi Number  ctermfg =" . s:magenta_b . " ctermbg=none cterm=none"
+exe "hi Boolean ctermfg =" . s:magenta_n . " ctermbg=none cterm=none"
+exe "hi Special ctermfg =" . s:white_b . " ctermbg=none cterm=none"
 
-exe "hi Folded ctermfg=" . s:blue_b   . " ctermbg=" . "none" . " cterm=none"
-exe "hi SpecialKey ctermfg=" . s:black_n . " ctermbg=none cterm=none"
+exe "hi Folded     ctermfg =" . s:blue_b  . " ctermbg=none cterm=none"
+exe "hi SpecialKey ctermfg =" . s:black_n . " ctermbg=none cterm=none"
 
 exe "hi Title ctermfg=" . s:red_n . " ctermbg=none cterm=none"
+
+exe "hi NonText ctermfg=" . s:black_n . " ctermbg=" . s:black_n
 
 
 " ------------------------------------------------------------------
 " GUI
 " ------------------------------------------------------------------
 
-exe "hi LineNr  ctermfg=" . s:black_b . " ctermbg=" . s:black_n . " cterm=none"
-exe "hi CursorLineNr  ctermfg=" . s:black_b . " ctermbg=none cterm=none"
-exe "hi CursorLine  ctermfg=none ctermbg=" . s:black_n . " cterm=none"
-exe "hi VertSplit ctermfg=" . s:black_b . " ctermbg=" . s:black_n . " cterm=none"
-exe "hi SignColumn ctermfg=none ctermbg=" . s:black_n . " cterm=none"
-exe "hi Directory  ctermfg=" . s:cyan_b . " ctermbg=none cterm=none"
+exe "hi LineNr       ctermfg ="              . s:black_b . " ctermbg="                . s:black_n . " cterm=none"
+exe "hi CursorLineNr ctermfg ="              . s:black_b . " ctermbg=none cterm=none"
+exe "hi CursorLine   ctermfg =none ctermbg=" . s:black_n . " cterm=none"
+exe "hi VertSplit    ctermfg ="              . s:black_b . " ctermbg="                . s:black_n . " cterm=none"
+exe "hi SignColumn   ctermfg =none ctermbg=" . s:black_n . " cterm=none"
+exe "hi Directory    ctermfg ="              . s:cyan_b  . " ctermbg=none cterm=none"
 
-exe "hi Pmenu  ctermfg=" . "none" . " ctermbg=" . s:black_n . " cterm=none"
-exe "hi PmenuSel ctermfg=" . s:black_n . " ctermbg=" . s:blue_n . " cterm=none"
+exe "hi Pmenu        ctermfg =" . "none"    . " ctermbg=" . s:black_n . " cterm=none"
+exe "hi PmenuSel     ctermfg =" . s:black_n . " ctermbg=" . s:blue_n  . " cterm=none"
 
 " Diffs
-exe "hi DiffAdd  ctermfg=" . s:black_n . " ctermbg=" . s:green_n . " cterm=none"
-exe "hi DiffChange  ctermfg=" . s:blue_b . " ctermbg=none cterm=none"
-exe "hi DiffText  ctermfg=" . s:black_n . " ctermbg=" . s:cyan_b . " cterm=none"
-exe "hi DiffDelete  ctermfg=" . s:red_n . " ctermbg=none cterm=none"
+exe "hi DiffAdd      ctermfg =" . s:black_n . " ctermbg=" . s:green_n . " cterm=none"
+exe "hi DiffChange   ctermfg =" . s:blue_b  . " ctermbg=none              cterm=none"
+exe "hi DiffText     ctermfg =" . s:black_n . " ctermbg=" . s:cyan_b  . " cterm=none"
+exe "hi DiffDelete   ctermfg =" . s:red_n   . " ctermbg=none              cterm=none"
 
 
 " ------------------------------------------------------------------
@@ -88,4 +90,3 @@ exe "hi javaScriptValue ctermfg=" . s:magenta_b   . " ctermbg=none cterm=none"
 " ------------------------------------------------------------------
 
 exe "hi htmlBold cterm=bold"
-
