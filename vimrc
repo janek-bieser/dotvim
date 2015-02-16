@@ -65,6 +65,9 @@ set nobackup
 set noswapfile
 set nowritebackup
 
+" auto reload changed files
+set autoread
+
 " set working directory
 nnoremap <leader>lcd :lcd %:p:h<cr>
 nnoremap <leader>cd :cd %:p:h<cr>
@@ -194,7 +197,8 @@ set cursorline
 
 if has('gui_running')
     " set font-family and size
-    set guifont=Anonymous\ Pro\ for\ Powerline:h14
+    " set guifont=Anonymous\ Pro\ for\ Powerline:h14
+    set guifont=Meslo\ LG\ S\ DZ:h12
 
     set background=light
 
@@ -281,7 +285,8 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
-let g:airline_theme = 'wombat'
+let g:airline_theme = 'ubaryd'
+"let g:airline_theme = 'wombat'
 "let g:airline_theme = 'lucius'
 "let g:airline_theme = 'monochrome'
 
