@@ -15,7 +15,7 @@ def getArgs(group):
 #
 def appendJSDocParams(s, args):
 	if len(args) > 0:
-		s += " *"
+		#s += " *"
 		for i in args:
 			s += " * @param {TYPE} " + i[0] + " "
 
@@ -75,6 +75,8 @@ endsnippet
 snippet class "class (es6)"
 /**
  * ${4:Description...}
+ *
+ * @class $1
  */
 class ${1:ClassName}${2: extends ${3:Subclass}} {
 	$0
@@ -83,7 +85,7 @@ endsnippet
 
 snippet ctr "constructor (es6)"
 /**
- * Constructor.`!p
+ * @constructor`!p
 snip.rv = ""
 appendJSDocParams(snip, getArgs(t[1]))
 `
@@ -95,8 +97,9 @@ endsnippet
 
 snippet m "method (es6)"
 /**
- * ${3:Description...}`!p
-snip.rv = ""
+ * ${3:Description...}
+ *
+ * @method $1`!p snip.rv = ""
 appendJSDocParams(snip, getArgs(t[2]))
 `
  */
@@ -107,28 +110,20 @@ endsnippet
 
 # ReactJS Templates
 
-snippet jsx "@jsx comment" !b
-/** @jsx React.DOM */
-endsnippet
-
-snippet rclass "ReactJS Class" !b
-var ${1:ClassName} = React.createClass({
-	render: function() {
-		$0
-	}
-});
-endsnippet
-
 snippet rcl "ReactJS Class (es6)" !b
 import React from 'react';
 
 /**
  * ${2:Description...}
+ *
+ * @class $1
  */
 class ${1:ClassName} extends React.Component {
 
 	/**
 	 * Render $1.
+	 * 
+	 * @method render
 	 */
 	render() {
 		$0
@@ -139,8 +134,15 @@ class ${1:ClassName} extends React.Component {
 export default $1;
 endsnippet
 
-snippet rgis "@jsx comment" !b
-getInitialState: function() {
+snippet jsx "@jsx comment" !b
+/** @jsx React.DOM */
+endsnippet
+
+snippet cwu "componentWillUnmount" !b
+/**
+ * @method componentWillUnmount
+ */
+componentWillUnmount() {
 	$0
 }
 endsnippet
