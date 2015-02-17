@@ -188,6 +188,17 @@ set showcmd
 
 " show line numbers
 set number
+set relativenumber
+
+function! ToggleAbsoluteLineNumbers()
+    if &l:relativenumber
+        set norelativenumber
+    else
+        set relativenumber
+    endif
+endfunction
+
+nnoremap <leader>ll :call ToggleAbsoluteLineNumbers()<cr>
 
 " enable status line
 set laststatus=2
