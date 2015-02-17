@@ -54,12 +54,12 @@ exe "hi NonText ctermfg=" . s:black_n . " ctermbg=" . s:black_n
 " GUI
 " ------------------------------------------------------------------
 
-exe "hi LineNr       ctermfg ="              . s:black_b . " ctermbg="                . s:black_n . " cterm=none"
-exe "hi CursorLineNr ctermfg ="              . s:black_b . " ctermbg=none cterm=none"
-exe "hi CursorLine   ctermfg =none ctermbg=" . s:black_n . " cterm=none"
-exe "hi VertSplit    ctermfg ="              . s:black_b . " ctermbg="                . s:black_n . " cterm=none"
-exe "hi SignColumn   ctermfg =none ctermbg=" . s:black_n . " cterm=none"
-exe "hi Directory    ctermfg ="              . s:cyan_b  . " ctermbg=none cterm=none"
+exe "hi LineNr       ctermfg ="              . s:black_b  . " ctermbg=" . s:black_n . " cterm=none"
+exe "hi CursorLineNr ctermfg ="              . s:yellow_n . " ctermbg=none cterm=none"
+exe "hi CursorLine   ctermfg =none ctermbg=" . s:black_n  . " cterm=none"
+exe "hi VertSplit    ctermfg ="              . s:black_b  . " ctermbg=" . s:black_n . " cterm=none"
+exe "hi SignColumn   ctermfg =none ctermbg=" . s:black_n  . " cterm=none"
+exe "hi Directory    ctermfg ="              . s:cyan_b   . " ctermbg=none cterm=none"
 
 exe "hi Pmenu        ctermfg =" . "none"    . " ctermbg=" . s:black_n . " cterm=none"
 exe "hi PmenuSel     ctermfg =" . s:black_n . " ctermbg=" . s:blue_n  . " cterm=none"
