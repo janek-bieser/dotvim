@@ -203,6 +203,9 @@ nnoremap <leader>ll :call ToggleAbsoluteLineNumbers()<cr>
 " enable status line
 set laststatus=2
 
+"
+let &colorcolumn="81,".join(range(120,999), ",")
+
 " highlight line the cursor is currently on
 set cursorline
 
@@ -243,6 +246,8 @@ if has('autocmd')
         au filetype tex setlocal wrap nolist lbr
 
         au filetype ruby setlocal ts=2 sw=2
+
+        au filetype go setlocal nolist
     augroup END
 
     augroup autosave

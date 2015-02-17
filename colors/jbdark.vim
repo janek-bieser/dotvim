@@ -60,6 +60,8 @@ exe "hi CursorLine   ctermfg =none ctermbg=" . s:black_n  . " cterm=none"
 exe "hi VertSplit    ctermfg ="              . s:black_b  . " ctermbg=" . s:black_n . " cterm=none"
 exe "hi SignColumn   ctermfg =none ctermbg=" . s:black_n  . " cterm=none"
 exe "hi Directory    ctermfg ="              . s:cyan_b   . " ctermbg=none cterm=none"
+exe "hi ColorColumn  ctermfg =none ctermbg=" . s:black_n    . " cterm=none"
+
 
 exe "hi Pmenu        ctermfg =" . "none"    . " ctermbg=" . s:black_n . " cterm=none"
 exe "hi PmenuSel     ctermfg =" . s:black_n . " ctermbg=" . s:blue_n  . " cterm=none"
